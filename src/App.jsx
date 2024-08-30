@@ -8,9 +8,12 @@ import HackathonRegister from './pages/hackathonRegister/HackathonRegister'
 import Login from './pages/login/Login'
 import Register from './pages/register/Register'
 import Profile from './pages/profile/Profile'
+import Navbar from './components/general/navbar/Navbar';
 function App() {
+  const [selectedOption,setSelected]=useState(-1);
   return (
     <Router>
+      <Navbar selectedOption={selectedOption} setSelected={setSelected}></Navbar>
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/login' element={<Login/>} />
