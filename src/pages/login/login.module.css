@@ -4,5 +4,77 @@
 	width: 90vw;
 	justify-content: center;
 	align-items: center;
-	font-size: 50px;
+	font-size: 15px;
 }
+
+.container{
+	background-color: rgb(255, 223, 183);
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .form{
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+	background-color: rgb(225, 184, 225);
+	padding: 1.5rem;
+  }
+  
+  input{
+	border: none;
+	border-radius: 7px;
+	padding: 7px;
+	margin: 5px 0px 10px 0px;
+	width: 96.8%;
+  }
+  
+  ::placeholder{
+	color: rgb(149, 147, 147);
+  }
+  
+  .login{
+	width: 100%;
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: blue;
+	color: white;
+	padding: 7px;
+	margin: 5px 0px 5px 0px;
+	cursor: pointer;
+  }
+  
+  .or{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	padding: 10px;
+	height: 30px;
+  }
+  
+  hr{
+	border-top: 1px solid black;
+	width: 40%;
+	height: 0px;
+  }
+  
+  .google_login{
+	border: none;
+	border-radius: 15px;
+	padding: 10px 20px;
+	width: 100%;
+	box-shadow: 1px 1px 5px;
+	display: flex;
+	align-content: center;
+	gap: 5px;
+	cursor: pointer;
+  }
+  
+  @media screen and (min-width: 480px) {
+	.form{
+	  width: 22vw;
+	}
+	}
