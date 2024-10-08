@@ -8,8 +8,8 @@ const Login = () => {
 
 	return (
 		<div className={styles.example}>
-			<div className="container">
-				<div className="form">
+			<div className={styles.container}>
+				<div className={styles.form}>
 					<form action="#">
 						<label htmlFor="Primary_email">Primary Email</label>
 						<br />
@@ -19,15 +19,15 @@ const Login = () => {
 						<br />
 						<input type="password" placeholder="Value" value={password} onChange={(e) => setPassword(e.target.value)} required/>
 						<br />
-						<button className="login">Log-in</button>
+						<button className={styles.login}>Log-in</button>
 						<br />
 						<a href="#">Forgot Password?</a>
-						<div className="or">
+						<div className={styles.or}>
 							<hr />
 							<p style={{ position: "relative", top: "-22px" }}>or</p>
 							<hr />
 						</div>
-						<button className="google_login"><FcGoogle />  Continue With Google</button>
+						<button className={styles.google_login}><FcGoogle />  Continue With Google</button>
 					</form>
 				</div>
 			</div>
