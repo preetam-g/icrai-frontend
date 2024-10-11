@@ -1,15 +1,23 @@
 /* General navbar styling */
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #010101a9;
+}
 .navbar {
+    height: 7.5vh;
     display: flex;
     align-items: center;
-    background-color: #2c3e50; /* Darker background for a modern look */
+    background-color: #32383b; /* Darker background for a modern look */
     padding: 10px 20px; /* Adjusted padding */
-    width: 100%; /* Ensure full width */
-    max-width: 90vw; /* Maximum width for better alignment */
-    margin: 0 auto; /* Center the navbar */
-    border-radius: 8px; /* Slightly larger border-radius */
+    /* width: 98%; */
+    /* max-width: 98vw;  */
+    margin: 0 auto; 
+    /* border-radius: 8px;  */
     justify-content: space-between;
     position: relative;
+    border-top:0.1px solid rgba(255, 255, 255, 0.285);
+    /* margin-top: 1vh; */
     box-sizing: border-box; /* Include padding in width calculation */
 }
 
@@ -23,26 +31,26 @@
 .options {
     cursor: pointer;
     padding: 8px 12px; /* Adjusted padding */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
-    border-radius: 4px; /* Slightly rounded corners */
+    border: 1px solid rgba(7, 7, 7, 0.3); /* Subtle border */
+    border-radius: 20px; /* Slightly rounded corners */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
     box-sizing: border-box; /* Include padding in width calculation */
 }
 
 /* Styling for selected option */
 .selected {
-    background-color: #e74c3c; /* Highlight color for selected option */
-    color: #0000009a; /* White text for contrast */
+    background-color: #8484848f; /* Highlight color for selected option */
+    color: #010101; /* White text for contrast */
 }
 
 /* Normal option styling */
 .normal {
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle background color */
-    color: #ecf0f1; /* Light text color for contrast */
+    background-color: rgba(255, 255, 255, 0.817) ;
+    color: rgb(0, 0, 0); 
 }
 
 .normal:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly darker on hover */
+    background-color: rgba(255, 255, 255, 0.501); /* Slightly darker on hover */
 }
 
 /* Dropdown button styling */
@@ -64,6 +72,7 @@
 
 /* Menu showing and hiding styles */
 .menushowing,.menuhiding{
+    z-index: 1000;
     display: flex;
     width: 90%;
     justify-content: space-evenly;
@@ -112,6 +121,7 @@ a{
 
 @media (max-width: 850px) {
     .navbar{
+        border: none;
         max-width: 100vw;
     }
     .options {

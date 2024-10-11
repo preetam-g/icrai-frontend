@@ -25,21 +25,20 @@ const Navbar = ({selectedOption,setSelected}) => {
             <Link to='/register' onClick={()=>handleClick(2)} className={`${selectedOption==2?styles.selected:styles.normal} ${styles.options}`} >
                 <span className={styles.navOptions} >Register</span>
             </Link>
-            <Link to='/contests' onClick={()=>handleClick(5)} className={`${selectedOption==5?styles.selected:styles.normal}  ${styles.options}`} >
-                <span className={styles.navOptions}  >Contests</span>
-            </Link>
-            <Link to='/contests/register' onClick={()=>handleClick(6)} className={`${selectedOption==6?styles.selected:styles.normal}  ${styles.options}`} >
-                <span className={styles.navOptions} >Hackathon</span>
-            </Link>
-            <Link to='/createTeam' onClick={()=>handleClick(7)} className={`${selectedOption==7?styles.selected:styles.normal}  ${styles.options}`} >
-                <span className={styles.navOptions} >CreateTeam</span>
+            <Link to='/profile' onClick={()=>handleClick(3)} className={`${selectedOption==3?styles.selected:styles.normal}  ${styles.options}`} >
+                <span className={styles.navOptions} >Profile</span>
             </Link>
             <Link to='/aboutUs' onClick={()=>handleClick(4)} className={`${selectedOption==4?styles.selected:styles.normal}  ${styles.options}`} > 
                 <span className={styles.navOptions} >About Us</span>
             </Link>
-
-            <Link to='/profile' onClick={()=>handleClick(3)} className={`${selectedOption==3?styles.selected:styles.normal}  ${styles.options}`} >
-                <span className={styles.navOptions} >Profile</span>
+            <Link to='/contests' onClick={()=>handleClick(5)} className={`${selectedOption==5?styles.selected:styles.normal}  ${styles.options}`} >
+                <span className={styles.navOptions}  >Contests</span>
+            </Link>
+            <Link to='/contests/register' onClick={()=>handleClick(6)} className={`${selectedOption==6?styles.selected:styles.normal}  ${styles.options}`} >
+                <span className={styles.navOptions} >HackathonRegister</span>
+            </Link>
+            <Link to='/createTeam' onClick={()=>handleClick(7)} className={`${selectedOption==7?styles.selected:styles.normal}  ${styles.options}`} >
+                <span className={styles.navOptions} >CreateTeam</span>
             </Link>
         </div>
         <div>
