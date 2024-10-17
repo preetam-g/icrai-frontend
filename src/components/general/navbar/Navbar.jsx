@@ -14,11 +14,11 @@ const Navbar = ({selectedOption,setSelected}) => {
   return (
     <>
     <div className={styles.navbar}>
-    <Link to='/' onClick={()=>handleClick(-1)}><span className={styles.Badge}>ICRAI</span></Link>
+
+        <Link to='/' onClick={()=>handleClick(-1)}><span className={styles.Badge}>ICRAI</span></Link>
+
         <div className={isShowingOptions==true?styles.menushowing:styles.menuhiding}>
-            {/* <div onClick={()=>handleClick(1)} className={`${selectedOption==1?styles.selected:styles.normal}  ${styles.options}`} >
-                <Link className={styles.navOptions}>Home</Link>
-            </div> */}
+            
             <Link to='/login' onClick={()=>handleClick(1)} className={`${selectedOption==1?styles.selected:styles.normal}  ${styles.options}`} >
                 <span className={styles.navOptions}  >Login</span>
             </Link>
@@ -41,6 +41,7 @@ const Navbar = ({selectedOption,setSelected}) => {
             <Link to='/profile' onClick={()=>handleClick(3)} className={`${selectedOption==3?styles.selected:styles.normal}  ${styles.options}`} >
                 <span className={styles.navOptions} >Profile</span>
             </Link>
+            
         </div>
         <div>
             <button onClick={handleShowing} className={styles.dropdownBtn}>{isShowingOptions==false?'Menu':'Close'}</button>

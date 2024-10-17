@@ -19,6 +19,8 @@
 	font-size: 200%;
 	cursor:default;
 	color:rgb(197, 141, 37);
+	font: "Zen Dots", "sans-serif";
+	font-style: bold;
 }
 .space-grotesk.header{
 	font-family: "Space Grotesk", sans-serif;
