@@ -8,73 +8,92 @@
 }
 
 .container{
-	background-color: rgb(255, 223, 183);
+	background-color: #e1e1e1;
 	height: 100%;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-  }
-  
-  .form{
+}
+
+.form{
 	display: flex;
 	flex-direction: column;
 	border-radius: 10px;
-	background-color: rgb(225, 184, 225);
+	background-color: #a4a8ab;
 	padding: 1.5rem;
-  }
-  
-  input{
+}
+
+input{
 	border: none;
 	border-radius: 7px;
 	padding: 7px;
 	margin: 5px 0px 10px 0px;
-	width: 96.8%;
-  }
-  
-  ::placeholder{
-	color: rgb(149, 147, 147);
-  }
-  
-  .login{
+	width: 96.8%;	
+	background-color: #e1e1e1;
+}
+
+label, a, p{
+	color: #1f2024;
+}
+
+
+.registerLink{
+	margin-top: 5%;
+	text-align: left;
+}
+
+::placeholder{
+	color: rgb(149, 147, 147);	
+}
+
+.login{
 	width: 100%;
 	border: 1px solid black;
 	border-radius: 5px;
-	background-color: blue;
+	background-color: #32383b;
 	color: white;
 	padding: 7px;
 	margin: 5px 0px 5px 0px;
 	cursor: pointer;
-  }
-  
-  .or{
+}
+
+.or{
 	display: flex;
 	justify-content: center;
 	align-content: center;
 	padding: 10px;
 	height: 30px;
-  }
-  
-  hr{
+}
+
+hr{
 	border-top: 1px solid black;
 	width: 40%;
 	height: 0px;
-  }
-  
-  .google_login{
+}
+
+.google_login{
 	border: none;
 	border-radius: 15px;
 	padding: 10px 20px;
 	width: 100%;
 	box-shadow: 1px 1px 5px;
-	display: flex;
+	display: inline;
 	align-content: center;
+	text-align: center;
+	vertical-align: middle;
 	gap: 5px;
 	cursor: pointer;
-  }
-  
-  @media screen and (min-width: 480px) {
+	color: #1f2024;
+	background-color: #e1e1e1;
+}
+
+.google_login svg{
+	vertical-align: middle;
+}
+
+@media screen and (min-width: 480px) {
 	.form{
-	  width: 22vw;
+		width: 22vw;
 	}
-	}
+}

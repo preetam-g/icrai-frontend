@@ -127,6 +127,7 @@ a{
     .options {
         padding: 8px 12px; /* Consistent padding */
         border-radius: 4px; /* Consistent border-radius */
+        text-align: center;
     }
     .menuhiding {
         display: none; /* Hide menu by default on small screens */
