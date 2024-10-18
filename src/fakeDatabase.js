@@ -36,3 +36,13 @@ export const questions = [
     "answer": "5G is the fifth generation of mobile network technology, offering faster data speeds, lower latency, and higher capacity compared to 4G. It enables more reliable and efficient communication for IoT devices and faster mobile internet experiences."
   }
 ]
+
+export const navItems = [
+  { path: '/login', label: 'Login'},
+  { path: '/register', label: 'Register'},
+  { path: '/contests', label: 'Contests'},
+  { path: '/contests/register', label: 'Hackathon'},
+  { path: '/createTeam', label: 'CreateTeam'},
+  { path: '/aboutUs', label: 'About Us'},
+  { path: '/profile', label: 'Profile'}
+];

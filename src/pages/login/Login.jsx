@@ -28,9 +28,9 @@ const Login = () => {
 							<p style={{ position: "relative", top: "-18px", verticalAlign: "middle" }}>or</p>
 							<hr />
 						</div>
-						<button className={styles.google_login} onClick={() => {}}> <FcGoogle />  Continue With Google </button>
 					</form>
-					<Link to="/Register" className={styles.registerLink} style={{color: "#1f2024"}}>Don't have an account? <br /> Register Here</Link>
+					<button className={styles.google_login} onClick={() => {}}> <FcGoogle />  Continue With Google </button>
+					<Link to="/register" className={styles.registerLink} style={{color: "#1f2024"}}>Don't have an account? <br /> Register Here</Link>
 				</div>
 			</div>
 		</div>

@@ -20,7 +20,7 @@ const Register = () => {
 		<div className={styles.example}>
 			<div className={styles.container}>
 				<div className={styles.form}>
-					<form action='#' className={styles.form}>
+					<form action='#'>
 						<div className={styles.row} style={{margin: "3vh 0 auto"}}>
 							<div className={styles.column}>
 								<label htmlFor="First-Name">First Name*</label>

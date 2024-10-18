@@ -41,8 +41,9 @@
 }
 
 .signUp{
+	width: 60%;
 	border: 1px solid black;
-	border-radius: 5px;
+	border-radius: 8px;
 	background-color: #32383b;
 	color: white;
 	padding: 7px;
@@ -63,7 +64,7 @@
 	border-radius: 15px;
 	padding: 10px 20px;
 	margin: 0px auto 5% auto;
-	width: 70%;
+	width: 60%;
 	box-shadow: 1px 1px 5px;
 	display: inline;
 	align-content: center;
