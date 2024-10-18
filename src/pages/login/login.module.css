@@ -1,10 +1,11 @@
 .example{
 	display: flex;
-	height: 100vh;
+	height: 92vh;
 	width: 100vw;
 	justify-content: center;
 	align-items: center;
 	font-size: 15px;
+	color: #1f2024;
 }
 
 .container{
@@ -22,6 +23,7 @@
 	border-radius: 10px;
 	background-color: #a4a8ab;
 	padding: 1.5rem;
+	min-width: 100px;
 }
 
 input{
@@ -32,11 +34,6 @@ input{
 	width: 96.8%;	
 	background-color: #e1e1e1;
 }
-
-label, a, p{
-	color: #1f2024;
-}
-
 
 .registerLink{
 	margin-top: 5%;
@@ -62,7 +59,7 @@ label, a, p{
 	display: flex;
 	justify-content: center;
 	align-content: center;
-	padding: 10px;
+	padding: 3px 10%;
 	height: 30px;
 }
 

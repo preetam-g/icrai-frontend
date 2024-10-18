@@ -20,17 +20,17 @@ const Login = () => {
 						<br />
 						<input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
 						<br />
-						<button className={styles.login}>Log-in</button>
+						<button className={styles.login} onClick={() => {}}>Log-in</button>
 						<br />
-						<a href="#">Forgot Password?</a> {/* modify link to enable password reset mechanism */}
+						<a href="#" style={{color: "#1f2024", padding: "3px auto"}}>Forgot Password?</a> {/* modify link to enable password reset mechanism */}
 						<div className={styles.or}>
 							<hr />
-							<p style={{ position: "relative", top: "-22px" }}>or</p>
+							<p style={{ position: "relative", top: "-18px", verticalAlign: "middle" }}>or</p>
 							<hr />
 						</div>
-						<button className={styles.google_login}> <FcGoogle />  Continue With Google </button>
+						<button className={styles.google_login} onClick={() => {}}> <FcGoogle />  Continue With Google </button>
 					</form>
-					<Link to="/Register" className={styles.registerLink}>Don't have an account? <br /> Register Here</Link>
+					<Link to="/Register" className={styles.registerLink} style={{color: "#1f2024"}}>Don't have an account? <br /> Register Here</Link>
 				</div>
 			</div>
 		</div>
