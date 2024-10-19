@@ -22,6 +22,7 @@
 	font: "Zen Dots", "sans-serif";
 	font-style: bold;
 }
+
 .space-grotesk.header{
 	font-family: "Space Grotesk", sans-serif;
 	font-optical-sizing: auto;
@@ -41,8 +42,10 @@
 	max-height: 100%;
 	max-width: 100%;
 }
+
 .formContainer{
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	height: 100%;
 	width: 57%;
@@ -50,22 +53,29 @@
 	border-radius: 5px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 1), 
 }
+
 .forms{
-	overflow-y: scroll;
+	overflow: auto;
 	height: 80%;
 	width: 90%;
-	margin: 0 auto;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
+
 .forms::-webkit-scrollbar {
     width: 12px;
 }
+
 .forms::-webkit-scrollbar-track {
-    background: #f1f1f1; /* color of the scrollbar track */
+    background: #e1e1e1; /* color of the scrollbar track */
 }
+
 .forms::-webkit-scrollbar-thumb {
     background-color: #888; /* color of the scroll handle (thumb) */
     border-radius: 10px; /* roundness of the scroll thumb */
-    border: 2px solid #f1f1f1; /* adds space around the thumb */
+    border: 2px solid #e1e1e1; /* adds space around the thumb */
 }
 
 .form{
@@ -76,6 +86,7 @@
 	transform: translateX(-50%);
 	margin: 5px 0 5px 0;
 }
+
 .answers{
 	position: relative;
 	width: 100%;
@@ -84,26 +95,30 @@
 	font-size: 90%;
 	font-family:Georgia, 'Times New Roman', Times, serif;
 }
+
 .labelQuests{
 	cursor: default;
 	width: 90%;
 	display: flex;
 	margin: 10px 0 10px 0;
 	background-color: white;
-	margin: 0.1px solid grey;
+	margin: 1vh auto 0;
 	padding: 10px 5px 10px 5px;
 	flex-wrap: wrap;
 	font-size: 130%;
 	justify-content: space-between;
 }
+
 .question{
 	width: 92.5%;
 	font-weight: 550;
 	font-family:monospace;
 }
+
 .arrow{
 	cursor: pointer;
 }
+
 @keyframes popOut {
 	0%{
 		top: -1vw;
