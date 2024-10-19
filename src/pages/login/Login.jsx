@@ -16,11 +16,11 @@ const Login = () => {
 					<form action="#">
 						<label htmlFor="Primary_email">Primary Email</label>
 						<br />
-						<input type="email" placeholder="abc@gmail.com" value={email} onChange={(e) => setEmail(e.target.value)} required/>
+						<input className={styles.ip} type="email" placeholder="abc@gmail.com" value={email} onChange={(e) => setEmail(e.target.value)} required/>
 						<br />
 						<label htmlFor="Password">Password</label>
 						<br />
-						<input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+						<input className={styles.ip} type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
 						<br />
 						<button className={styles.login} onClick={() => {}}>Log-in</button>
 						<br />
@@ -31,9 +31,9 @@ const Login = () => {
 							<hr />
 						</div>
 					</form>
-					<button className={styles.google_login} onClick={() => {}}> <FcGoogle style={{width: "20px", height: "20px"}}/>  Continue With Google </button>
-					<button className={styles.google_login} onClick={() => {}} style={{margin: "3% auto 1%"}}> <BsMicrosoft style={{width: "15px", height: '15px', marginRight: "2px"}}/> Continue with Microsoft </button>
-					<Link to="/register" className={styles.registerLink} style={{color: "#1f2024"}}>Don't have an account? <br /> Register Here</Link>
+					<button className={styles.google_login} onClick={() => {}}> <FcGoogle style={{width: "20px", height: "17px"}}/>  Continue With Google </button>
+					<button className={styles.google_login} onClick={() => {}} style={{margin: "3% auto 1%"}}> <BsMicrosoft style={{width: "15px", height: '17px', marginRight: "2px"}}/> Continue with Microsoft </button>
+					<Link to="/register" className={styles.registerLink} style={{color: "#1f2024"}}></Link>
 				</div>
 			</div>
 		</div>

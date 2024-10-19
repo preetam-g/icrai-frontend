@@ -2,6 +2,7 @@ import styles from './register.module.css';
 import { FcGoogle } from "react-icons/fc";
 import { BsMicrosoft } from 'react-icons/bs';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
 
@@ -25,51 +26,51 @@ const Register = () => {
 						<div className={styles.row} style={{margin: "3vh 0 auto"}}>
 							<div className={styles.column}>
 								<label htmlFor="First-Name">First Name*</label>
-								<input type="text" placeholder='Rage' value={firstName} onChange={e => setFirstName(e.target.value)} required />
+								<input className={styles.ip} type="text" placeholder='Rage' value={firstName} onChange={e => setFirstName(e.target.value)} required />
 							</div>
 							<div className={styles.column}>
 								<label htmlFor="Last-Name">Last Name*</label>
-								<input type="text" placeholder='Titan' value={lastName} onChange={e => setLastName(e.target.value)} required />
+								<input className={styles.ip} type="text" placeholder='Titan' value={lastName} onChange={e => setLastName(e.target.value)} required />
 							</div>
 						</div>
 						<div className={styles.row}>
 							<div className={styles.column}>
 								<label htmlFor="university">University/College/School*</label>
-								<input type="text" placeholder='IIT Guwahati' value={university} onChange={e => setUniversity(e.target.value)} required />
+								<input className={styles.ip} type="text" placeholder='IIT Guwahati' value={university} onChange={e => setUniversity(e.target.value)} required />
 							</div>
 							<div className={styles.column}>
 								<label htmlFor="Age">Age*</label>
-								<input type="number" placeholder='23' value={age} onChange={e => setAge(e.target.value)} required />
+								<input className={styles.ip} type="number" placeholder='23' value={age} onChange={e => setAge(e.target.value)} required />
 							</div>
 						</div>
 						<div className={styles.row}>
 							<div className={styles.column}>
 								<label htmlFor="number">Phone Number*</label>
-								<input type="number" placeholder='9876543210' value={number} onChange={e => setNumber(e.target.value)} required />
+								<input className={styles.ip} type="number" placeholder='9876543210' value={number} onChange={e => setNumber(e.target.value)} required />
 							</div>
 							<div className={styles.column}>
 								<label htmlFor="altNumber">Alternate Number</label>
-								<input type="number" placeholder='9876543210' value={altNumber} onChange={e => setAltNumber(e.target.value)} />
+								<input className={styles.ip} type="number" placeholder='9876543210' value={altNumber} onChange={e => setAltNumber(e.target.value)} />
 							</div>
 						</div>
 						<div className={styles.row}>
 							<div className={styles.column}>
 								<label htmlFor="number">Personal Email*</label>
-								<input type="text" placeholder='abc@gmail.com' value={email} onChange={e => setEmail(e.target.value)} required />
+								<input className={styles.ip} type="text" placeholder='abc@gmail.com' value={email} onChange={e => setEmail(e.target.value)} required />
 							</div>
 							<div className={styles.column}>
 								<label htmlFor="altEmail">Alternate Email</label>
-								<input type="text" placeholder='abc@iitg.ac.in' value={altEmail} onChange={e => setAltEmail(e.target.value)} />
+								<input className={styles.ip} type="text" placeholder='abc@iitg.ac.in' value={altEmail} onChange={e => setAltEmail(e.target.value)} />
 							</div>
 						</div>
 						<div className={styles.row}>
 							<div className={styles.column}>
 								<label htmlFor="number">Password*</label>
-								<input type="password" placeholder='******' value={password} onChange={e => setPassword(e.target.value)} required />
+								<input className={styles.ip} type="password" placeholder='******' value={password} onChange={e => setPassword(e.target.value)} required />
 							</div>
 							<div className={styles.column}>
 								<label htmlFor="password">Confirm Password*</label>
-								<input type="password" placeholder='******' value={cnfPassword} onChange={e => setCnfPassword(e.target.value)} required />
+								<input className={styles.ip} type="password" placeholder='******' value={cnfPassword} onChange={e => setCnfPassword(e.target.value)} required />
 							</div>
 						</div>
 						<button className={styles.signUp} onClick={() => {}}>Sign-Up</button>
@@ -79,8 +80,9 @@ const Register = () => {
 							<hr />
 						</div>
 					</form>
-					<button className={styles.google_login} onClick={() => {}}> <FcGoogle style={{width: "20px", height: "20px"}}/>  Continue With Google </button>
-					<button className={styles.google_login} onClick={() => {}} style={{margin: "0px auto 3%"}}> <BsMicrosoft style={{width: "15px", height: '15px', marginRight: "2px"}}/> Continue with Microsoft </button>
+					<button className={styles.google_login} onClick={() => {}}> <FcGoogle style={{width: "20px", height: "17px", position: "relative", top: "-1px"}}/>  Continue With Google </button>
+					<button className={styles.google_login} onClick={() => {}}> <BsMicrosoft style={{width: "15px", height: '17px', marginRight: "2px", position: "relative", top: "-1px"}}/> Continue with Microsoft </button>
+					<Link to="/login" className={styles.loginLink} style={{color: "#1f2024"}}></Link>
 				</div>
 			</div>
 		</div>

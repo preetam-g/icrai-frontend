@@ -30,10 +30,6 @@
 	/* width: 100%; */
 }
 
-::placeholder{
-	color: rgb(149, 147, 147);	
-}
-
 .column{
 	width: 80%;
 	justify-content: center;
@@ -42,6 +38,24 @@
 	display: flex;
 	flex-direction: column;
 }
+
+.ip{
+	border: none;
+	border-radius: 7px;
+	padding: 7px;
+	margin: 5px 0px 10px 0px;
+	width: 96.8%;	
+	background-color: #e8e8e8;	
+}
+
+.ip::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
+	-webkit-appearance: none;
+}
+
+.ip::placeholder{
+	color: rgb(149, 147, 147);	
+}
+
 
 .signUp{
 	width: 60%;
@@ -62,10 +76,16 @@
 	height: 30px;
 }
 
+.or hr{
+	border-top: 1px solid black;
+	width: 40%;
+	height: 0px;
+}
+
 .google_login{
 	border: none;
 	border-radius: 15px;
-	padding: 10px 20px;
+	padding: 10px 10px;
 	margin: 0px auto 2% auto;
 	width: 60%;
 	box-shadow: 1px 1px 5px;
@@ -88,6 +108,49 @@
 	transition-duration: 30ms;
 }
 
+.loginLink{
+	/* border: 1px solid black; */
+	display: flex;
+	justify-content: center;
+	margin: 1% auto 8%;
+	/* background-color: #1f2024; */
+}
+
+.loginLink::after, .loginLink::before{
+	content: attr(data-text);
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.3s ease-out;
+	background-color: #32383b;
+	color: white;
+	padding: 1vh 20px;
+	font-size: 0.9rem;
+	font-family: "Adgasima", sans-serif;
+}
+
+.loginLink:hover::after{
+	border-radius: 15px;
+	content: "Login Here";
+  	opacity: 1;
+}
+
+.loginLink::before{
+	content: "Already have an Account?";
+	border-radius: 8px;
+	opacity: 1;
+}
+
+.loginLink:hover::before {
+	opacity: 0;
+}
+
+.loginLink:hover::after {
+	opacity: 1;
+}
+
 
 @media (max-width: 750px){
 
@@ -98,7 +161,7 @@
 
 	.form{
 		margin: 10% auto;
-		overflow:auto;
+		overflow: auto;
 		min-width: 340px;
 	}
 

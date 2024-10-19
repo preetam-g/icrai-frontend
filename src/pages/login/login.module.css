@@ -26,7 +26,7 @@
 	min-width: 200px;
 }
 
-input{
+.ip{
 	border: none;
 	border-radius: 7px;
 	padding: 7px;
@@ -35,17 +35,55 @@ input{
 	background-color: #e8e8e8;	
 }
 
-input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
+.ip::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
 	-webkit-appearance: none;
 }
 
-.registerLink{
-	margin-top: 5%;
-	text-align: left;
+.ip::placeholder{
+	color: rgb(149, 147, 147);	
 }
 
-::placeholder{
-	color: rgb(149, 147, 147);	
+.registerLink{
+	/* border: 1px solid black; */
+	display: flex;
+	justify-content: center;
+	margin: 3% auto 8%;
+	/* background-color: #1f2024; */
+}
+
+.registerLink::after, .registerLink::before{
+	content: attr(data-text);
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.3s ease-out;
+	background-color: #32383b;
+	color: white;
+	padding: 1vh 20px;
+	font-size: 0.9rem;
+	font-family: "Adgasima", sans-serif;
+}
+
+.registerLink:hover::after{
+	border-radius: 15px;
+	content: "Register Here";
+  	opacity: 1;
+}
+
+.registerLink::before{
+	content: "Don't have an Account?";
+	border-radius: 8px;
+	opacity: 1;
+}
+
+.registerLink:hover::before {
+	opacity: 0;
+}
+
+.registerLink:hover::after {
+	opacity: 1;
 }
 
 .login{
@@ -67,7 +105,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
 	height: 30px;
 }
 
-hr{
+.or hr{
 	border-top: 1px solid black;
 	width: 40%;
 	height: 0px;

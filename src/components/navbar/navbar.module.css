@@ -30,6 +30,8 @@ body{
 
 /* Link options styling */
 .options {
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 0.05rem;
     cursor: pointer;
     padding: 8px 12px; /* Adjusted padding */
     border: 1px solid rgba(7, 7, 7, 0.3); /* Subtle border */

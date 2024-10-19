@@ -47,16 +47,39 @@ export const navItems = [
   { path: '/profile', label: 'Profile'}
 ];
 
-export const team = [
+export const teams = [
   {
     teamName: 'Titans',
-    members : [
-      {
-        firstName: 'megan', lastName: 'fox', phone: 1231, email: 'megan@gmail.com'
-      },
-      {
-        firstName: 'mario', lastName: 'titan', phone: 13321, email: 'mario@gmail.com'
-      }
+    members: [
+      { firstName: 'Megan', lastName: 'Fox', phone: 1231, email: 'megan@titans.com' },
+      { firstName: 'Mario', lastName: 'Titan', phone: 13321, email: 'mario@titans.com' },
+      { firstName: 'Sarah', lastName: 'Connor', phone: 5678, email: 'sarah@titans.com' }
+    ]
+  },
+  {
+    teamName: 'Avengers',
+    members: [
+      { firstName: 'Tony', lastName: 'Stark', phone: 9876, email: 'tony@avengers.com' },
+      { firstName: 'Steve', lastName: 'Rogers', phone: 5432, email: 'steve@avengers.com' },
+      { firstName: 'Natasha', lastName: 'Romanoff', phone: 2468, email: 'natasha@avengers.com' },
+      { firstName: 'Thor', lastName: 'Odinson', phone: 1357, email: 'thor@avengers.com' }
+    ]
+  },
+  {
+    teamName: 'Justice League',
+    members: [
+      { firstName: 'Bruce', lastName: 'Wayne', phone: 2468, email: 'bruce@justiceleague.com' },
+      { firstName: 'Diana', lastName: 'Prince', phone: 1357, email: 'diana@justiceleague.com' }
+    ]
+  },
+  {
+    teamName: 'X-Men',
+    members: [
+      { firstName: 'Charles', lastName: 'Xavier', phone: 1111, email: 'charles@xmen.com' },
+      { firstName: 'Jean', lastName: 'Grey', phone: 2222, email: 'jean@xmen.com' },
+      { firstName: 'Scott', lastName: 'Summers', phone: 3333, email: 'scott@xmen.com' },
+      { firstName: 'Logan', lastName: 'Howlett', phone: 4444, email: 'logan@xmen.com' },
+      { firstName: 'Ororo', lastName: 'Munroe', phone: 5555, email: 'ororo@xmen.com' }
     ]
   }
 ]
