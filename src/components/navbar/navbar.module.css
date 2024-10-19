@@ -4,6 +4,7 @@ body{
     margin: 0;
     background-color: #010101a9;
 }
+
 .navbar {
     height: 8vh;
     display: flex;
@@ -123,6 +124,7 @@ a{
     .navbar{
         border: none;
         max-width: 100vw;
+        min-width: 350px;
     }
     .options {
         padding: 8px 12px; /* Consistent padding */

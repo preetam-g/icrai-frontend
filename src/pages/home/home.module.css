@@ -57,7 +57,7 @@
 	margin: 0 auto;
 }
 .forms::-webkit-scrollbar {
-    width: 12px;  
+    width: 12px;
 }
 .forms::-webkit-scrollbar-track {
     background: #f1f1f1; /* color of the scrollbar track */
@@ -67,6 +67,7 @@
     border-radius: 10px; /* roundness of the scroll thumb */
     border: 2px solid #f1f1f1; /* adds space around the thumb */
 }
+
 .form{
 	width: 90%;
 	padding: 10px;

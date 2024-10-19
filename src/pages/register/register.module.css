@@ -18,13 +18,16 @@
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
+	min-width: 450px;
+	max-width: 600px;
+	width: 65%;
 }
 
 .row{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	overflow-wrap: anywhere;
-	width: 45vw;
+	/* width: 100%; */
 }
 
 ::placeholder{
@@ -90,7 +93,27 @@
 
 	.row{
 		grid-template-columns: 1fr;
+		max-width: 100%;
+	}
+
+	.form{
+		margin: 10% auto;
+		overflow:auto;
+		min-width: 340px;
+	}
+
+	.form::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	.form::-webkit-scrollbar-thumb {
+		background-color: #34383b; /* color of the scroll handle (thumb) */
+		border-radius: 10px; /* roundness of the scroll thumb */		
 	}
 
 	
+}
+
+@media (max-width: 400px){
+
 }

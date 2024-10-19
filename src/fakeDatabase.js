@@ -41,8 +41,22 @@ export const navItems = [
   { path: '/login', label: 'Login'},
   { path: '/register', label: 'Register'},
   { path: '/contests', label: 'Contests'},
-  { path: '/contests/register', label: 'Hackathon'},
   { path: '/createTeam', label: 'CreateTeam'},
+  { path: '/contests/register', label: 'Hackathon'},
   { path: '/aboutUs', label: 'About Us'},
   { path: '/profile', label: 'Profile'}
 ];
+
+export const team = [
+  {
+    teamName: 'Titans',
+    members : [
+      {
+        firstName: 'megan', lastName: 'fox', phone: 1231, email: 'megan@gmail.com'
+      },
+      {
+        firstName: 'mario', lastName: 'titan', phone: 13321, email: 'mario@gmail.com'
+      }
+    ]
+  }
+]

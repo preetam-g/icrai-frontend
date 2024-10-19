@@ -63,7 +63,7 @@ import { contestsData } from "../../fakeDatabase"; // Ensure this path is correc
 import styles from "./contests.module.css"; // Import CSS module for styling
 
 const Contests = () => {
-  const [selectedContest, setSelectedContest] = useState(null); // Start with no contest selected
+  const [selectedContest, setSelectedContest] = useState(contestsData[0]); // Start with no contest selected
 
   // Function to handle contest selection
   const handleSelectContest = (contest) => {
