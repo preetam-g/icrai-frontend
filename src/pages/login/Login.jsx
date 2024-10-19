@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import styles from './login.module.css'
+import styles from './login.module.css';
 import { FcGoogle } from "react-icons/fc";
-import { Link } from 'react-router-dom'
+import { BsMicrosoft } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 	const [email, setEmail] = useState('');
@@ -22,14 +23,15 @@ const Login = () => {
 						<br />
 						<button className={styles.login} onClick={() => {}}>Log-in</button>
 						<br />
-						<a href="#" style={{color: "#1f2024", padding: "3px auto"}}>Forgot Password?</a> {/* modify link to enable password reset mechanism */}
+						<a href="#" style={{color: "#1f2024", padding: "1% auto"}}>Forgot Password?</a> {/* modify link to enable password reset mechanism */}
 						<div className={styles.or}>
 							<hr />
 							<p style={{ position: "relative", top: "-18px", verticalAlign: "middle" }}>or</p>
 							<hr />
 						</div>
 					</form>
-					<button className={styles.google_login} onClick={() => {}}> <FcGoogle />  Continue With Google </button>
+					<button className={styles.google_login} onClick={() => {}}> <FcGoogle style={{width: "20px", height: "20px"}}/>  Continue With Google </button>
+					<button className={styles.google_login} onClick={() => {}} style={{margin: "3% auto 1%"}}> <BsMicrosoft style={{width: "15px", height: '15px', marginRight: "2px"}}/> Continue with Microsoft </button>
 					<Link to="/register" className={styles.registerLink} style={{color: "#1f2024"}}>Don't have an account? <br /> Register Here</Link>
 				</div>
 			</div>

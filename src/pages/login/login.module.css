@@ -89,6 +89,11 @@ hr{
 	vertical-align: middle;
 }
 
+.google_login:hover, .login:hover{
+	transform: scale(1.02);
+	transition-duration: 30ms;
+}
+
 @media screen and (min-width: 480px) {
 	.form{
 		width: 22vw;

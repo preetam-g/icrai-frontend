@@ -1,5 +1,6 @@
 import styles from './register.module.css';
 import { FcGoogle } from "react-icons/fc";
+import { BsMicrosoft } from 'react-icons/bs';
 import React, { useState } from 'react';
 
 const Register = () => {
@@ -20,7 +21,7 @@ const Register = () => {
 		<div className={styles.example}>
 			<div className={styles.container}>
 				<div className={styles.form}>
-					<form action='#'>
+					<form action='ealkf'>
 						<div className={styles.row} style={{margin: "3vh 0 auto"}}>
 							<div className={styles.column}>
 								<label htmlFor="First-Name">First Name*</label>
@@ -78,7 +79,8 @@ const Register = () => {
 							<hr />
 						</div>
 					</form>
-					<button className={styles.google_login} onClick={() => {}}> <FcGoogle />  Continue With Google </button>
+					<button className={styles.google_login} onClick={() => {}}> <FcGoogle style={{width: "20px", height: "20px"}}/>  Continue With Google </button>
+					<button className={styles.google_login} onClick={() => {}} style={{margin: "0px auto 3%"}}> <BsMicrosoft style={{width: "15px", height: '15px', marginRight: "2px"}}/> Continue with Microsoft </button>
 				</div>
 			</div>
 		</div>
