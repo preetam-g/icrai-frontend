@@ -7,5 +7,5 @@ export default defineConfig({
   server: {
     open: true,
   },
-  base : '/icrai-frontend',
+  base : '',
 })
