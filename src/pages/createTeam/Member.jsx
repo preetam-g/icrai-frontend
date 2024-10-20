@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './createTeam.module.css';
 
-export const Member = ({idx}) => {
+export const Member = ({ idx, member, onChange }) => {
 
-    const [firstName, setFirstName] = useState(null);
-    const [lastName, setLastName] = useState(null);
-    const [mail, setMail] = useState(null);
-    const [phone, setPhone] = useState(null);
+    const handleChange = (field, value) => {
+        onChange(idx, field, value);
+    }
 
     return (
         <div className={styles.member}>
@@ -15,26 +14,56 @@ export const Member = ({idx}) => {
             </div>
             <div className={styles.row}>
                 <div className={styles.column}>
-                    <label htmlFor="first-name">First Name*</label>
-                    <input className={styles.ip} type="text" value={firstName} placeholder="Rage" onChange={e => setFirstName(e.target.value)} required />
+                    <label htmlFor={`first-name-${idx}`}>First Name*</label>
+                    <input 
+                        id={`first-name-${idx}`} 
+                        className={styles.ip} 
+                        type="text" 
+                        value={member.firstName || ''}  
+                        placeholder="Rage" 
+                        onChange={e => handleChange('firstName', e.target.value)} 
+                        required 
+                    />
                 </div>
                 <div className={styles.column}>
-                    <label htmlFor="last-name">Last Name*</label>
-                    <input className={styles.ip} type="text" value={lastName} placeholder="Titan" onChange={e => setLastName(e.target.value)} required />
+                    <label htmlFor={`last-name-${idx}`}>Last Name*</label>
+                    <input 
+                        id={`last-name-${idx}`} 
+                        className={styles.ip} 
+                        type="text" 
+                        value={member.lastName || ''}  /* Ensure value is not undefined */
+                        placeholder="Titan" 
+                        onChange={e => handleChange('lastName', e.target.value)} 
+                        required 
+                    />
                 </div>
             </div>
             <div className={styles.row}>
                 <div className={styles.column}>
-                    <label htmlFor="phone">Phone Number*</label>
-                    <input className={styles.ip} type="number" value={phone} placeholder="Must be a Number" onChange={e => setPhone(e.target.value)} required />
+                    <label htmlFor={`phone-${idx}`}>Phone Number*</label>
+                    <input 
+                        id={`phone-${idx}`} 
+                        className={styles.ip} 
+                        type="number" 
+                        value={member.phone || ''}  /* Ensure value is not undefined */
+                        placeholder="Must be a Number" 
+                        onChange={e => handleChange('phone', e.target.value)} 
+                        required 
+                    />
                 </div>
                 <div className={styles.column}>
-                    <label htmlFor="mail">Email ID*</label>
-                    <input className={styles.ip} type="text" value={mail} placeholder="abc@gmail.com" onChange={e => setMail(e.target.value)} required />
+                    <label htmlFor={`email-${idx}`}>Email ID*</label>
+                    <input 
+                        id={`email-${idx}`} 
+                        className={styles.ip} 
+                        type="text" 
+                        value={member.email || ''}  /* Ensure value is not undefined */
+                        placeholder="abc@gmail.com" 
+                        onChange={e => handleChange('email', e.target.value)} 
+                        required 
+                    />
                 </div>
             </div>
         </div>
-
     );
-
 };

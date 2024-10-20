@@ -1,20 +1,26 @@
 .example{
 	display: flex;
 	height: 92vh;
-	width: 100%;
+	width: 100vw;
 	justify-content: center;
 	align-items: center;
 	font-size: 15px;
 	margin: 0 auto;
 	color: #1f2024;
+	background-color: #a4a8ab;
 }
 
 .container{
 	background-color: #e1e1e1;
 	width: 40%;
-	height: 100%;
+	/* height: 90%; */
+	min-height: 60%;
+	max-height: 90%;
 	overflow-y: scroll;
-	min-width: 850px;
+	/* min-width: 850px; */
+	display: flex;
+	flex-direction: column;
+	border-radius: 2%;
 }
 
 .container::-webkit-scrollbar{
@@ -59,7 +65,7 @@
 .ipTitle{
 	border: none;
 	border-radius: 10px;
-	margin: 0 auto;
+	margin: 0 auto 1vh;
 	width: 90%;
 	height: 5vh;
 	background-color: #d9dbdd;
@@ -104,7 +110,7 @@
 	font-family: 'Koh Santepheap', serif;
 	font-weight: 700;
 	font-size: 1.3rem;
-	margin: 2% auto;
+	margin: 1% auto;
 	display: flex;
 	align-content: center;
 	justify-content: center;
