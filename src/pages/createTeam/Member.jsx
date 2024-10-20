@@ -10,7 +10,7 @@ export const Member = ({ idx, member, onChange }) => {
     return (
         <div className={styles.member}>
             <div className={styles.heading}>
-                {idx === 0 ? "Team Leader" : `Team Member`}
+                {idx === 0 ? "Team Leader" : `Team Member ${idx+1}`}
             </div>
             <div className={styles.row}>
                 <div className={styles.column}>
