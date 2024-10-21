@@ -1,6 +1,6 @@
 	import styles from './createTeam.module.css';
 	import { Member } from './Member';
-	import { teams } from '../../fakeDatabase'
+	// import { teams } from '../../fakeDatabase'
 	import { useEffect, useState } from 'react';
 	import { IoMdClose } from 'react-icons/io';
 
@@ -19,7 +19,7 @@
 
 		*/
 
-		const limits = {lower: 1, upper: 8};
+		const limits = {lower: 2, upper: 8};
 		const defaultMember = {firstName: '', lastName: '', phone: '', email: ''};
 		const [teamTitle, setTeamTitle] = useState(null);
 		const [members, setMembers] = useState(Array(limits.lower).fill(defaultMember));

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Register = () => {
 
+	// backend
 	const [firstName, setFirstName] = useState(null);
 	const [lastName, setLastName] = useState(null);
 	const [university, setUniversity] = useState(null);

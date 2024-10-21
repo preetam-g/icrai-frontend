@@ -47,7 +47,7 @@ export const navItems = [
   { path: '/profile', label: 'Profile'}
 ];
 
-export const teams = [
+export const teamDetails = [
   {
     teamName: 'Titans',
     members: [
@@ -81,5 +81,54 @@ export const teams = [
       { firstName: 'Logan', lastName: 'Howlett', phone: 4444, email: 'logan@xmen.com' },
       { firstName: 'Ororo', lastName: 'Munroe', phone: 5555, email: 'ororo@xmen.com' }
     ]
+  }
+]
+
+
+export const users = [
+  {
+    firstname: "John",
+    lastname: "Doe",
+    age: 25,
+    university: "University of California, Berkeley",
+    phone: 9876543210,
+    email: "john.doe@example.com",
+    password: "password123"
+  },
+  {
+    firstname: "Jane",
+    lastname: "Smith",
+    age: 22,
+    university: "Massachusetts Institute of Technology",
+    phone: 9876543211,
+    email: "jane.smith@example.com",
+    password: "qwerty456"
+  },
+  {
+    firstname: "David",
+    lastname: "Johnson",
+    age: 30,
+    university: "University of Oxford",
+    phone: 9876543212,
+    email: "david.johnson@example.com",
+    password: "abc123xyz"
+  },
+  {
+    firstname: "Emily",
+    lastname: "Brown",
+    age: 27,
+    university: "University of Tokyo",
+    phone: 9876543213,
+    email: "emily.brown@example.com",
+    password: "password456"
+  },
+  {
+    firstname: "Michael",
+    lastname: "Davis",
+    age: 24,
+    university: "University of Sydney",
+    phone: 9876543214,
+    email: "michael.davis@example.com",
+    password: "qwerty789"
   }
 ]
