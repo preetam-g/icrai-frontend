@@ -1,10 +1,11 @@
 .example{
 	display: flex;
-	height: 100vh;
-	width: 100vw;
+	height: 92vh;
+	width: 100%;
 	justify-content: center;
 	align-items: center;
 	font-size: 15px;
+	color: #1f2024;
 }
 
 .container{
@@ -22,29 +23,67 @@
 	border-radius: 10px;
 	background-color: #a4a8ab;
 	padding: 1.5rem;
+	min-width: 200px;
 }
 
-input{
+.ip{
 	border: none;
 	border-radius: 7px;
 	padding: 7px;
 	margin: 5px 0px 10px 0px;
 	width: 96.8%;	
-	background-color: #e1e1e1;
+	background-color: #e8e8e8;	
 }
 
-label, a, p{
-	color: #1f2024;
+.ip::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
+	-webkit-appearance: none;
 }
 
+.ip::placeholder{
+	color: rgb(149, 147, 147);	
+}
 
 .registerLink{
-	margin-top: 5%;
-	text-align: left;
+	/* border: 1px solid black; */
+	display: flex;
+	justify-content: center;
+	margin: 3% auto 10%;
+	/* background-color: #1f2024; */
 }
 
-::placeholder{
-	color: rgb(149, 147, 147);	
+.registerLink::after, .registerLink::before{
+	content: attr(data-text);
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.3s ease-out;
+	background-color: #32383b;
+	color: white;
+	padding: 1vh 20px;
+	font-size: 0.9rem;
+	font-family: "Adgasima", sans-serif;
+}
+
+.registerLink:hover::after{
+	border-radius: 15px;
+	content: "Register Here";
+  	opacity: 1;
+}
+
+.registerLink::before{
+	content: "Don't have an Account?";
+	border-radius: 8px;
+	opacity: 1;
+}
+
+.registerLink:hover::before {
+	opacity: 0;
+}
+
+.registerLink:hover::after {
+	opacity: 1;
 }
 
 .login{
@@ -62,11 +101,11 @@ label, a, p{
 	display: flex;
 	justify-content: center;
 	align-content: center;
-	padding: 10px;
+	padding: 3px 10%;
 	height: 30px;
 }
 
-hr{
+.or hr{
 	border-top: 1px solid black;
 	width: 40%;
 	height: 0px;
@@ -90,6 +129,11 @@ hr{
 
 .google_login svg{
 	vertical-align: middle;
+}
+
+.google_login:hover, .login:hover{
+	transform: scale(1.02);
+	transition-duration: 30ms;
 }
 
 @media screen and (min-width: 480px) {

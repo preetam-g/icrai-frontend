@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import styles from './login.module.css'
+import styles from './login.module.css';
 import { FcGoogle } from "react-icons/fc";
-import { Link } from 'react-router-dom'
+import { BsMicrosoft } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
+	
+	// send to backend
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
@@ -14,23 +17,24 @@ const Login = () => {
 					<form action="#">
 						<label htmlFor="Primary_email">Primary Email</label>
 						<br />
-						<input type="email" placeholder="abc@gmail.com" value={email} onChange={(e) => setEmail(e.target.value)} required/>
+						<input className={styles.ip} type="email" placeholder="abc@gmail.com" value={email} onChange={(e) => setEmail(e.target.value)} required/>
 						<br />
 						<label htmlFor="Password">Password</label>
 						<br />
-						<input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+						<input className={styles.ip} type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
 						<br />
-						<button className={styles.login}>Log-in</button>
+						<button className={styles.login} onClick={() => {}}>Log-in</button>
 						<br />
-						<a href="#">Forgot Password?</a> {/* modify link to enable password reset mechanism */}
+						<a href="#" style={{color: "#1f2024", padding: "1% auto"}}>Forgot Password?</a> {/* modify link to enable password reset mechanism */}
 						<div className={styles.or}>
 							<hr />
-							<p style={{ position: "relative", top: "-22px" }}>or</p>
+							<p style={{ position: "relative", top: "-18px", verticalAlign: "middle" }}>or</p>
 							<hr />
 						</div>
-						<button className={styles.google_login}> <FcGoogle />  Continue With Google </button>
 					</form>
-					<Link to="/Register" className={styles.registerLink}>Don't have an account? <br /> Register Here</Link>
+					<button className={styles.google_login} onClick={() => {}}> <FcGoogle style={{width: "20px", height: "17px"}}/>  Continue With Google </button>
+					<button className={styles.google_login} onClick={() => {}} style={{margin: "3% auto 1%"}}> <BsMicrosoft style={{width: "15px", height: '17px', marginRight: "2px"}}/> Continue with Microsoft </button>
+					<Link to="/register" className={styles.registerLink} style={{color: "#1f2024"}}></Link>
 				</div>
 			</div>
 		</div>
