@@ -1,16 +1,19 @@
-import { useState } from 'react'
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Home from './pages/home/Home'
-import AboutUs from './pages/aboutUs/AboutUs'
-import Contests from './pages/contests/Contests'
-import CreateTeam from './pages/createTeam/CreateTeam'
-import HackathonRegister from './pages/hackathonRegister/HackathonRegister'
-import Login from './pages/login/Login'
-import Register from './pages/register/Register'
-import Profile from './pages/profile/Profile'
-import Navbar from './components/general/navbar/Navbar';
+import { useState } from 'react';
+import {BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
+import Home from './pages/home/Home';
+import AboutUs from './pages/aboutUs/AboutUs';
+import Contests from './pages/contests/Contests';
+import CreateTeam from './pages/createTeam/CreateTeam';
+import HackathonRegister from './pages/hackathonRegister/HackathonRegister';
+import Login from './pages/login/Login';
+import Register from './pages/register/Register';
+import Profile from './pages/profile/Profile';
+import Navbar from './components/navbar/Navbar';
+
 function App() {
-  const [selectedOption,setSelected]=useState(-1);
+
+  const [selectedOption,setSelected] = useState(-1);
+
   return (
     <Router>
       <Navbar selectedOption={selectedOption} setSelected={setSelected}></Navbar>

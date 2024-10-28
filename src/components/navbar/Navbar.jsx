@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './navbar.module.css';
 import { Link, useLocation } from 'react-router-dom';
-import {navItems} from '../../fakeDatabase.js'
+import { navItems } from '../../fakeDatabase.js'
 
 const Navbar = ({selectedOption,setSelected}) => {
 
