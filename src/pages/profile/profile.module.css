@@ -1,7 +1,10 @@
+*{
+    box-sizing: border-box;
+}
+
 .example{
     box-sizing: border-box;
 	display: flex;
-	flex-direction: row;
 	height: 92vh;
 	width: 100%;
 	justify-content: center;
@@ -26,7 +29,7 @@
     align-items: center; 
     justify-content: flex-start; 
     padding: 20px;
-    width: 300px;
+    width: 80%;
     margin: 0 auto; 
     text-align: center; 
 }
@@ -91,8 +94,8 @@ h2 {
     padding: 20px;
     margin:0;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    overflow: auto;
 }
+
 .container_2::-webkit-scrollbar {
     display: none; 
 }
@@ -134,4 +137,37 @@ h2 {
 
 .contestsContainer li {
     padding: 5px 0;
+}
+
+@media screen and (max-width: 480px){
+     .example{
+        display: flex;
+        padding: 0% 10px;
+        width: 100vw;
+        flex-direction: column;
+        overflow-y: auto;
+        gap: 10px;
+     }
+
+     .container_1{
+        width: 100%;
+     }
+
+     .container_2{
+        width: 100%;
+     }
+
+     .card{
+        display: flex;
+        flex-direction: column;
+     }
+
+     .contestsContainer{
+        display: flex;
+        flex-direction: column;
+     }
+
+     .contestCard{
+        width: 100%;
+     }
 }

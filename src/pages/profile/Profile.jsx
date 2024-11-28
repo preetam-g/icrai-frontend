@@ -80,10 +80,10 @@ const Profile = () => {
                     </div>
                     <h2>{profileData.fullName}</h2>
                     {isEditing ? (
-                        <textarea 
-                            className={styles.aboutMeInput} 
-                            value={aboutMe} 
-                            onChange={handleAboutMeChange} 
+                        <textarea
+                            className={styles.aboutMeInput}
+                            value={aboutMe}
+                            onChange={handleAboutMeChange}
                         />
                     ) : (
                         <p>{aboutMe}</p>
@@ -96,14 +96,16 @@ const Profile = () => {
 
             <div className={styles.container_2}>
                 <div className={styles.card}>
-                    <h3>Personal Details</h3>
-                    <p><strong>University:</strong> {profileData.details.university}</p>
-                    <p><strong>Age:</strong> {profileData.details.age}</p>
-                    <p><strong>Phone:</strong> {profileData.details.phone}</p>
-                    <p><strong>Alternate Phone:</strong> {profileData.details.altPhone}</p>
-                    <p><strong>Email:</strong> {profileData.details.email}</p>
-                    <p><strong>Alternate Email:</strong> {profileData.details.altEmail}</p>
-                    <h3>Joined Contests</h3>
+                    <div>
+                        <h3>Personal Details</h3>
+                        <p><strong>University:</strong> {profileData.details.university}</p>
+                        <p><strong>Age:</strong> {profileData.details.age}</p>
+                        <p><strong>Phone:</strong> {profileData.details.phone}</p>
+                        <p><strong>Alternate Phone:</strong> {profileData.details.altPhone}</p>
+                        <p><strong>Email:</strong> {profileData.details.email}</p>
+                        <p><strong>Alternate Email:</strong> {profileData.details.altEmail}</p>
+                        <h3>Joined Contests</h3>
+                    </div>
                     <div className={styles.contestsContainer}>
                         {profileData.contests.map((contest, index) => (
                             <div key={index} className={styles.contestCard}>

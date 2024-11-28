@@ -11,7 +11,7 @@ const Description = ({ num }) => {
         <div className={styles.container2}>
 
             <DescriptionHeader num={num} />
-            <ContestantDetails num={num} />
+            {/* <ContestantDetails num={num} /> */}
             <EligibilityCard num={num} />
             <DescriptionDiv num={num} />
 
