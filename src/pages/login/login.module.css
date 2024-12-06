@@ -43,15 +43,40 @@
 	color: rgb(149, 147, 147);	
 }
 
-.registerLink{
-	/* border: 1px solid black; */
+/* .register{
+	padding: 30px 0px;
+	z-index: 2;
+	position: fixed; 
+	left: 50%; 
+	top: 50%; 
+	transform: translate(-50%,-50%);
+	display: none;
+	border: 2px solid red;
+} */
+
+.registerLink2{
 	display: flex;
 	justify-content: center;
-	margin: 3% auto 10%;
-	/* background-color: #1f2024; */
+	margin: 4% auto 0%;
+	background-color: #32383b;
+	color: white;
+	padding: 1vh 20px;
+	font-size: 0.9rem;
+	font-family: "Adgasima", sans-serif;
+	border: none;
+	border-radius: 15px;
+	cursor: pointer;
 }
 
-.registerLink::after, .registerLink::before{
+/* .registerLink{ */
+	/* border: 1px solid black; */
+	/* display: flex;
+	justify-content: center;
+	margin: 3% auto 10%; */
+	/* background-color: #1f2024; */
+/* } */
+
+/* .registerLink::after, .registerLink::before{
 	content: attr(data-text);
 	position: absolute;
 	display: flex;
@@ -84,7 +109,7 @@
 
 .registerLink:hover::after {
 	opacity: 1;
-}
+} */
 
 .login{
 	width: 100%;
@@ -97,18 +122,27 @@
 	cursor: pointer;
 }
 
-.or{
+/* .or{
 	display: flex;
 	justify-content: center;
 	align-content: center;
 	padding: 3px 10%;
 	height: 30px;
+} */
+
+.or{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 10%;
+	height: 30px;
+	gap: 20px;
 }
+
 
 .or hr{
 	border-top: 1px solid black;
-	width: 40%;
-	height: 0px;
+	width: 50%;
 }
 
 .google_login{

@@ -17,14 +17,14 @@ const Register = () => {
 	const [altEmail, setAltEmail] = useState(null);
 	const [password, setPassword] = useState(null);
 	const [cnfPassword, setCnfPassword] = useState(null);
-	
 
-	return(
+
+	return (
 		<div className={styles.example}>
 			<div className={styles.container}>
 				<div className={styles.form}>
 					<form action='#'>
-						<div className={styles.row} style={{margin: "3vh 0 auto"}}>
+						<div className={styles.row} style={{ margin: "3vh 0 auto" }}>
 							<div className={styles.column}>
 								<label htmlFor="First-Name">First Name*</label>
 								<input className={styles.ip} type="text" placeholder='Rage' value={firstName} onChange={e => setFirstName(e.target.value)} required />
@@ -74,16 +74,19 @@ const Register = () => {
 								<input className={styles.ip} type="password" placeholder='******' value={cnfPassword} onChange={e => setCnfPassword(e.target.value)} required />
 							</div>
 						</div>
-						<button className={styles.signUp} onClick={() => {}}>Sign-Up</button>
+						<button className={styles.signUp} onClick={() => { }}>Sign-Up</button>
 						<div className={styles.or}>
 							<hr />
-							<p style={{ position: "relative", top: "-18px", verticalAlign: "middle" }}>or</p>
+							<p>or</p>
 							<hr />
 						</div>
+						<div style={{display:"flex", flexDirection:"column"}}>
+							<button className={styles.google_login} onClick={() => { }}> <FcGoogle style={{ width: "20px", height: "17px", position: "relative", top: "-1px" }} />  Continue With Google </button>
+							<button className={styles.google_login} onClick={() => { }}> <BsMicrosoft style={{ width: "15px", height: '17px', marginRight: "2px", position: "relative", top: "-1px" }} /> Continue with Microsoft </button>
+							{/* <Link to="/login" className={styles.loginLink} style={{ color: "#1f2024" }}></Link> */}
+							{/* <Link to="/login" className={styles.loginLink}>Already have an Account?</Link> */}
+						</div>
 					</form>
-					<button className={styles.google_login} onClick={() => {}}> <FcGoogle style={{width: "20px", height: "17px", position: "relative", top: "-1px"}}/>  Continue With Google </button>
-					<button className={styles.google_login} onClick={() => {}}> <BsMicrosoft style={{width: "15px", height: '17px', marginRight: "2px", position: "relative", top: "-1px"}}/> Continue with Microsoft </button>
-					<Link to="/login" className={styles.loginLink} style={{color: "#1f2024"}}></Link>
 				</div>
 			</div>
 		</div>
