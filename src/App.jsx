@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
 import Home from './pages/home/Home';
 import AboutUs from './pages/aboutUs/AboutUs';
@@ -13,7 +13,18 @@ import Navbar from './components/navbar/Navbar';
 function App() {
 
   const [selectedOption,setSelected] = useState(-1);
+	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+  
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  })
   return (
     <Router>
       <Navbar selectedOption={selectedOption} setSelected={setSelected}></Navbar>
@@ -23,7 +34,7 @@ function App() {
         <Route path='/register' element={<Register/>} />
         <Route path='/profile' element={<Profile/>} />
         <Route path='/aboutUs' element={<AboutUs/>} />
-        <Route path='/contests' element={<Contests/>} />
+        <Route path='/contests' element={<Contests windowWidth={windowWidth}/>} />
         <Route path='/contests/register' element={<HackathonRegister/>} />
         <Route path='/createTeam' element={<CreateTeam/>} />
       </Routes>

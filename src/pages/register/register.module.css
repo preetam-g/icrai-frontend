@@ -165,7 +165,11 @@
 	opacity: 1;
 } */
 
-
+@media(max-width:750px){
+	.loginLink::before{
+		position: relative;
+	}
+}
 @media (max-width: 750px){
 
 	.row{
