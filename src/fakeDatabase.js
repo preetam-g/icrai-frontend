@@ -38,13 +38,14 @@ export const questions = [
 ]
 
 export const navItems = [
-  { path: '/login', label: 'Login'},
-  { path: '/register', label: 'Register'},
+  // { path: '/login', label: 'Login'},
+  // { path: '/register', label: 'Register'},
   { path: '/contests', label: 'Contests'},
   { path: '/createTeam', label: 'CreateTeam'},
   { path: '/contests/register', label: 'Hackathon'},
   { path: '/aboutUs', label: 'About Us'},
-  { path: '/profile', label: 'Profile'}
+  { path: '/profile', label: 'Profile'},
+  { path: '/login', label: 'Login'}
 ];
 
 export const teamDetails = [

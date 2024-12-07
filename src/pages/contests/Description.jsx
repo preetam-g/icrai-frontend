@@ -18,7 +18,7 @@ const Description = ({ num,windowWidth,setActivated}) => {
             </div>
             }
             <DescriptionHeader num={num} />
-            <ContestantDetails num={num} />
+            {/* <ContestantDetails num={num} /> */}
             <EligibilityCard num={num} />
             <DescriptionDiv num={num} />
 
