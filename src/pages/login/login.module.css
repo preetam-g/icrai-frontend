@@ -23,7 +23,8 @@
 	border-radius: 10px;
 	background-color: #a4a8ab;
 	padding: 1.5rem;
-	min-width: 200px;
+	min-width: 320px;
+	width: 40%;
 }
 
 .ip{
@@ -170,8 +171,8 @@
 	transition-duration: 30ms;
 }
 
-@media screen and (min-width: 480px) {
+/* @media screen and (min-width: 480px) {
 	.form{
 		width: 22vw;
 	}
-}
+} */

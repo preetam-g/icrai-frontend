@@ -22,8 +22,8 @@ const DescriptionHeader = ({ num }) => {
             </div>
             <div className={styles.Application}>
                 <div className={styles.leftcontent}>
-                    <span>{Details[num - 1].price}</span>
-                    <button>Register</button>
+                    <p className={styles.leftSpan}>{Details[num - 1].price}</p>
+                    <button className={styles.leftSpan}>Register</button>
                 </div>
                 <div className={styles.rightcontent}>
                     <div className={styles.AppliedDiv1}>
