@@ -1,0 +1,29 @@
+.container {
+    display: 'flex';
+    flex-direction: 'column';
+    align-items: 'center';
+    justify-content: 'center';
+    height: '100vh';
+    text-align: 'center';
+    font-family: 'Arial, sans-serif';
+    background: white;
+    color: '#333';
+}
+
+.icon {
+    width: '150px';
+    height: '150px';
+    margin-bottom: '20px'
+}
+
+.title {
+    font-size: '2.5rem';
+    margin-bottom: '10px',
+}
+
+
+
+.message {
+    font-size: '1rem';
+    color: '#666',
+}
