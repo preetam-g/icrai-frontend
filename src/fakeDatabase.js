@@ -1,5 +1,4 @@
 // src/fakeDatabase.js
-import { useAuth0 } from '@auth0/auth0-react';
 
 export const contestsData = [
   { id: 1, title: "Contest 1", details: "Details for Contest 1" },
@@ -39,16 +38,16 @@ export const questions = [
   }
 ]
 
-export const navItems = [
-  // { path: '/login', label: 'Login'},
-  // { path: '/register', label: 'Register'},
-  { path: '/contests', label: 'Contests'},
-  { path: '/createTeam', label: 'CreateTeam'},
-  { path: '/contests/register', label: 'Hackathon'},
-  { path: '/aboutUs', label: 'About Us'},
-  // { path: '/profile', label: 'Profile'},
-  { path: '/login', label: 'Login'}
-];
+// export const navItems = [
+//   // { path: '/login', label: 'Login'},
+//   // { path: '/register', label: 'Register'},
+//   { path: '/contests', label: 'Contests'},
+//   { path: '/createTeam', label: 'CreateTeam'},
+//   { path: '/contests/register', label: 'Hackathon'},
+//   { path: '/aboutUs', label: 'About Us'},
+//   // { path: '/profile', label: 'Profile'},
+//   { path: '/login', label: 'Login'}
+// ];
 
 export const teamDetails = [
   {

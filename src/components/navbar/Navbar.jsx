@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styles from './navbar.module.css';
 import { Link, useLocation } from 'react-router-dom';
-import { navItems } from '../../fakeDatabase.js'
+import { useNavItems } from '../NavItems';
 
 const Navbar = ({selectedOption,setSelected}) => {
+
+    const navItems = useNavItems();
 
     const [isShowingOptions,setShowingOptions] = useState(false);
     const loc = useLocation();
