@@ -22,7 +22,7 @@ const Navbar = ({selectedOption,setSelected}) => {
             <Link to='/login' onClick={()=>handleClick(1)} className={`${selectedOption==1?styles.selected:styles.normal}  ${styles.options}`} >
                 <span className={styles.navOptions}  >Login</span>
             </Link>
-            <Link to='/register' onClick={()=>handleClick(2)} className={`${selectedOption==2?styles.selected:styles.normal} ${styles.options}`} >
+            <Link to='/register'  onClick={()=>handleClick(2)} className={`${selectedOption==2?styles.selected:styles.normal} ${styles.options}`} >
                 <span className={styles.navOptions} >Register</span>
             </Link>
             <Link to='/profile' onClick={()=>handleClick(3)} className={`${selectedOption==3?styles.selected:styles.normal}  ${styles.options}`} >

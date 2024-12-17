@@ -52,16 +52,19 @@ import { Link } from 'react-router-dom';
 import Register from '../register/Register';
 import Popup from 'reactjs-popup';
 import { MdScale } from 'react-icons/md';
+import { useAuth0 } from '@auth0/auth0-react';
+import Profile from '../profile/Profile';
 
 const Login = () => {
-
+    const {loginWithRedirect, isAuthenticated} = useAuth0();
 	// send to backend
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
 	return (
 		<>
-			<div className={styles.example}>
+            {isAuthenticated ? (<Profile/>) :
+			(<div className={styles.example}>
 				<div className={styles.container}>
 					<div className={styles.form}>
 						<form action="#">
@@ -82,7 +85,7 @@ const Login = () => {
 								<hr />
 							</div>
 						</form>
-						<button className={styles.google_login} onClick={() => { }}> <FcGoogle style={{ width: "20px", height: "17px" }} />  Continue With Google </button>
+						<button className={styles.google_login} onClick={async ()=> await loginWithRedirect()}> <FcGoogle style={{ width: "20px", height: "17px" }} />  Continue With Google </button>
 						<button className={styles.google_login} onClick={() => { }} style={{ margin: "3% auto 1%" }}> <BsMicrosoft style={{ width: "15px", height: '17px', marginRight: "2px" }} /> Continue with Microsoft </button>
 						{/* <Link to="/register" className={styles.registerLink} style={{color: "#1f2024"}}></Link> */}
 						{/* <button className={styles.registerLink2}>Don't have an account?</button> */}
@@ -134,7 +137,7 @@ const Login = () => {
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>)}
 		</>
 	);
 }
