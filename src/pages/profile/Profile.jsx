@@ -228,7 +228,7 @@ const Profile = () => {
                     
                     {/* Logout Button */}
                     
-                    <button className={styles.logoutButton} onClick={() => logout({ returnTo: window.location.origin })}>
+                    <button className={styles.logoutButton} onClick={() => logout()}>
                         Logout
                     </button>
                     
