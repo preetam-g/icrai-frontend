@@ -135,13 +135,15 @@ import React, { useState } from 'react';
 import md5 from 'md5';  // Ensure you have the 'md5' package installed
 import { useAuth0 } from '@auth0/auth0-react';
 import { useNavigate } from 'react-router-dom';
+import { useGetMyUser } from '../../api/MyUserApi';
 
 const Profile = () => {
     const { logout } = useAuth0();  // Import logout function from Auth0
     const navigate = useNavigate();
+    const { currentUser, isLoading:isGetLoading } = useGetMyUser(); 
     const profileData = {
-        email: "abc@gmail.com",  // Assuming you get the email from user data
-        fullName: "Kshitij M Gajbhiye",
+        email: currentUser.email,  // Assuming you get the email from user data
+        fullName: currentUser.name,
         aboutMe: "I am a software engineer and love building amazing applications.",
         contests: [
             {
@@ -201,6 +203,14 @@ const Profile = () => {
          navigate("/profile-form");
     };
 
+    if(isGetLoading) {
+        return <span>Loading....</span>
+    }
+    
+    if(!currentUser){
+    return <span>Unable to load user profile</span>;
+    }
+
     return (
         <div className={styles.example}>
             <div className={styles.container_1}>
@@ -249,12 +259,12 @@ const Profile = () => {
                 <div className={styles.card}>
                     <div>
                         <h3>Personal Details</h3>
-                        <p><strong>University:</strong> {profileData.details.university}</p>
-                        <p><strong>Age:</strong> {profileData.details.age}</p>
-                        <p><strong>Phone:</strong> {profileData.details.phone}</p>
-                        <p><strong>Alternate Phone:</strong> {profileData.details.altPhone}</p>
-                        <p><strong>Email:</strong> {profileData.details.email}</p>
-                        <p><strong>Alternate Email:</strong> {profileData.details.altEmail}</p>
+                        <p><strong>University:</strong> {currentUser.university}</p>
+                        <p><strong>Age:</strong> {currentUser.age}</p>
+                        <p><strong>Phone:</strong> {currentUser.phone}</p>
+                        <p><strong>Alternate Phone:</strong> {currentUser.alternatePhone}</p>
+                        <p><strong>Email:</strong> {currentUser.email}</p>
+                        <p><strong>Alternate Email:</strong> {currentUser.alternateEmail}</p>
                         <h3>Joined Contests</h3>
                     </div>
                     <div className={styles.contestsContainer}>

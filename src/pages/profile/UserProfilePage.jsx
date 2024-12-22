@@ -11,11 +11,12 @@
 
 
 import React, { useState } from "react";
-import { useUpdateMyUser } from "../../api/MyUserApi";
+import { useGetMyUser, useUpdateMyUser } from "../../api/MyUserApi";
 import UserProfileForm from "../../forms/profile-form/UserProfileForm";
 import Toast from "../../components/toast/Toast"; 
 
 const UserProfilePage = () => {
+  const { currentUser, isLoading:isGetLoading } = useGetMyUser(); 
   const { updateUser, isLoading: isUpdateLoading, isSuccess, isError, error, reset } = useUpdateMyUser();
   const [toast, setToast] = useState({ message: "", type: "" });
 
@@ -33,9 +34,19 @@ const UserProfilePage = () => {
     setToast({ message: "", type: "" });
   };
 
+  if(isGetLoading) {
+    return <span>Loading....</span>
+  }
+
+  if(!currentUser){
+    return <span>Unable to load user profile</span>;
+  }
+
+//   console.log("Current User Data: ", currentUser);
+
   return (
     <div>
-      <UserProfileForm onSave={updateUser} isLoading={isUpdateLoading} />
+      <UserProfileForm currentUser={currentUser} onSave={updateUser} isLoading={isUpdateLoading} />
       {toast.message && <Toast message={toast.message} type={toast.type} onClose={handleCloseToast} />}
     </div>
   );

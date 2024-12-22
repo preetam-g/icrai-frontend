@@ -103,12 +103,21 @@
 // export default UserProfileForm;
 
 
-import React from 'react';
+import React,{ useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import "./UserProfileForm-model.css";
 
-const UserProfileForm = ({ onSave, isLoading }) => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+const UserProfileForm = ({ currentUser,onSave, isLoading }) => {
+  const { register, handleSubmit,reset, formState: { errors } } = useForm({
+    defaultValues: currentUser,
+  });
+
+//   console.log("User Profile Form Current User: ", currentUser);
+
+  useEffect(() => {
+    if(currentUser)
+    reset(currentUser);
+  }, [currentUser, reset]);
 
   return (
     <div className="form-container">
