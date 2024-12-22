@@ -142,8 +142,8 @@ const Profile = () => {
     const navigate = useNavigate();
     const { currentUser, isLoading:isGetLoading } = useGetMyUser(); 
     const profileData = {
-        email: currentUser.email,  // Assuming you get the email from user data
-        fullName: currentUser.name,
+        email: "abc@gmail.com",  // Assuming you get the email from user data
+        fullName: "Your Name",
         aboutMe: "I am a software engineer and love building amazing applications.",
         contests: [
             {
@@ -226,9 +226,9 @@ const Profile = () => {
                         }}
                     />
                     <div className={styles.initials}>
-                        {getInitials(profileData.fullName)}
+                        {currentUser.name? getInitials(currentUser.name):getInitials(profileData.fullName)}
                     </div>
-                    <h2>{profileData.fullName}</h2>
+                    <h2>{currentUser.name? currentUser.name : profileData.fullName}</h2>
                     {isEditing ? (
                         <textarea
                             className={styles.aboutMeInput}
