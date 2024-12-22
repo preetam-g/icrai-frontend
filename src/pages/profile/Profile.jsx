@@ -134,9 +134,11 @@ import styles from './profile.module.css';
 import React, { useState } from 'react';
 import md5 from 'md5';  // Ensure you have the 'md5' package installed
 import { useAuth0 } from '@auth0/auth0-react';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
     const { logout } = useAuth0();  // Import logout function from Auth0
+    const navigate = useNavigate();
     const profileData = {
         email: "abc@gmail.com",  // Assuming you get the email from user data
         fullName: "Kshitij M Gajbhiye",
@@ -195,6 +197,10 @@ const Profile = () => {
         setIsEditing(!isEditing);
     };
 
+    const handleClick = () => {
+         navigate("/profile-form");
+    };
+
     return (
         <div className={styles.example}>
             <div className={styles.container_1}>
@@ -224,6 +230,10 @@ const Profile = () => {
                     )}
                     <button className={styles.editButton} onClick={toggleEdit}>
                         {isEditing ? "Save" : "Edit"}
+                    </button>
+
+                    <button className={styles.updateButton} onClick={handleClick}>
+                        Update
                     </button>
                     
                     {/* Logout Button */}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import {BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import Home from './pages/home/Home';
 import AboutUs from './pages/aboutUs/AboutUs';
 import Contests from './pages/contests/Contests';
@@ -9,6 +9,8 @@ import Login from './pages/login/Login';
 import Register from './pages/register/Register';
 import Profile from './pages/profile/Profile';
 import Navbar from './components/navbar/Navbar';
+import AuthCallbackPage from './auth/AuthCallbackPage';
+import UserProfilePage from './pages/profile/UserProfilePage';
 
 function App() {
 
@@ -37,6 +39,9 @@ function App() {
         <Route path='/contests' element={<Contests windowWidth={windowWidth}/>} />
         <Route path='/contests/register' element={<HackathonRegister/>} />
         <Route path='/createTeam' element={<CreateTeam/>} />
+        <Route path='/profile-form' element={<UserProfilePage/>} />
+        <Route path="/auth-callback" element={<AuthCallbackPage />} />
+        <Route path='*' element={<Navigate to="/" />} />
       </Routes>
     </Router>
   )
