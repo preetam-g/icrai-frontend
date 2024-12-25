@@ -1,43 +1,67 @@
-*{
+* {
 	font-family: "Adgasima", sans-serif;
 }
 
-.example{
-	height: 92%;
+.container {
+	background-color: #e1e1e1;
+	height: 100%;
 	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow-y: scroll;
+}
+
+.register {
+	display: flex;
+	height: 92vh;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
 	font-size: 15px;
 	color: #1f2024;
 }
 
-.container{
+.registerLink2 {
 	display: flex;
-	height: 100%;
-	width: 100%;
-	/* background-color: #e1e1e1; */
+	justify-content: center;
+	margin: 4% auto 0%;
+	background-color: #32383b;
+	color: white;
+	padding: 1vh 20px;
+	font-size: 0.9rem;
+	font-family: "Adgasima", sans-serif;
+	border: none;
+	border-radius: 15px;
+	cursor: pointer;
 }
 
-.form{
+.form {
+	background-color: #a4a8ab;
+	padding: 1.5rem;
 	position: relative;
 	margin: auto;
-	/* background-color: #a4a8ab; */
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	min-width: 450px;
 	max-width: 600px;
 	width: 65vw;
-	height: 100%;
+	/* max-height: 100%; */
+	height: 70%;
+	min-height: 650px;
+	/* min-height: max-content; */
 	overflow-y: auto;
 }
 
-.row{
+.row {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	overflow-wrap: anywhere;
 	/* width: 100%; */
 }
 
-.column{
+.column {
 	width: 80%;
 	justify-content: center;
 	margin: 0 auto;
@@ -46,25 +70,26 @@
 	flex-direction: column;
 }
 
-.ip{
+.ip {
 	border: none;
 	border-radius: 7px;
 	padding: 7px;
 	margin: 5px 0px 10px 0px;
-	width: 96.8%;	
-	background-color: #e8e8e8;	
+	width: 96.8%;
+	background-color: #e8e8e8;
 }
 
-.ip::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
+.ip::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
 	-webkit-appearance: none;
 }
 
-.ip::placeholder{
-	color: rgb(149, 147, 147);	
+.ip::placeholder {
+	color: rgb(149, 147, 147);
 }
 
 
-.signUp{
+.signUp {
 	width: 60%;
 	border: 1px solid black;
 	border-radius: 8px;
@@ -75,7 +100,7 @@
 	cursor: pointer;
 }
 
-.or{
+.or {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -84,13 +109,13 @@
 	gap: 20px;
 }
 
-.or hr{
+.or hr {
 	border-top: 1px solid black;
 	width: 40%;
 	height: 0px;
 }
 
-.google_login{
+.google_login {
 	border: none;
 	border-radius: 15px;
 	padding: 10px 10px;
@@ -107,16 +132,17 @@
 	background-color: #e1e1e1;
 }
 
-.google_login svg{
+.google_login svg {
 	vertical-align: middle;
 }
 
-.google_login:hover, .signUp:hover{
+.google_login:hover,
+.signUp:hover {
 	transform: scale(1.01);
 	transition-duration: 30ms;
 }
 
-.loginLink{
+.loginLink {
 	/* border: 1px solid black; */
 	display: flex;
 	justify-content: center;
@@ -165,19 +191,20 @@
 	opacity: 1;
 } */
 
-@media(max-width:750px){
-	.loginLink::before{
+@media(max-width:750px) {
+	.loginLink::before {
 		position: relative;
 	}
 }
-@media (max-width: 750px){
 
-	.row{
+@media (max-width: 750px) {
+
+	.row {
 		grid-template-columns: 1fr;
 		max-width: 100%;
 	}
 
-	.form{
+	.form {
 		margin: 10% auto;
 		overflow: auto;
 		min-width: 340px;
@@ -188,11 +215,13 @@
 	}
 
 	.form::-webkit-scrollbar-thumb {
-		background-color: #34383b; /* color of the scroll handle (thumb) */
-		border-radius: 10px; /* roundness of the scroll thumb */		
+		background-color: #34383b;
+		/* color of the scroll handle (thumb) */
+		border-radius: 10px;
+		/* roundness of the scroll thumb */
 	}
 
-	
+
 }
 
 /* @media (max-width: 400px){

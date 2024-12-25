@@ -3,18 +3,21 @@ import styles from './navbar.module.css';
 import { Link, useLocation } from 'react-router-dom';
 import { navItems } from '../../fakeDatabase.js'
 
-const Navbar = ({selectedOption,setSelected}) => {
+const Navbar = ({selectedOption,setSelected,setLogging,isLogging,setRegistering}) => {
 
     const [isShowingOptions,setShowingOptions] = useState(false);
     const loc = useLocation();
 
     useEffect(() => {
-        console.log(loc);
         const currIndex = navItems.findIndex(item => item.path === location.pathname);
         setSelected(currIndex);
     }, [loc])
 
     const handleClick=(index)=>{
+        if(isLogging==false||index!=5){
+            setLogging(true);
+            setRegistering(false);
+        }
         setSelected(index);
         setShowingOptions(false);
     }

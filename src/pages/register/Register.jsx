@@ -2,9 +2,10 @@ import styles from './register.module.css';
 import { FcGoogle } from "react-icons/fc";
 import { BsMicrosoft } from 'react-icons/bs';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link, useNavigate } from 'react-router-dom';
 
-const Register = () => {
+const Register = ({setLogging,setRegistering}) => {
+	// const navigate=useNavigate();
 
 	// backend
 	const [firstName, setFirstName] = useState(null);
@@ -18,9 +19,23 @@ const Register = () => {
 	const [password, setPassword] = useState(null);
 	const [cnfPassword, setCnfPassword] = useState(null);
 
+	const loginPage=()=>{
+		setRegistering(false)
+		setLogging(true)
+	}
 
 	return (
-		<div className={styles.example}>
+		// <div className={styles.register}
+		// style={{
+		// 	display:"flex",
+		// 	flexDirection:"column",
+		// 	justifyContent: "center",
+		// 	alignItems: "center",
+		// 	background: "#a4a8ab",
+		// 	padding: "10px 0px 20px 0px",
+		// 	borderRadius: "15px"}}
+		// >
+		<div className={styles.register}>
 			<div className={styles.container}>
 				<div className={styles.form}>
 					<form action='#'>
@@ -80,13 +95,14 @@ const Register = () => {
 							<p>or</p>
 							<hr />
 						</div>
-						<div style={{display:"flex", flexDirection:"column"}}>
+						<div style={{ display: "flex", flexDirection: "column" }}>
 							<button className={styles.google_login} onClick={() => { }}> <FcGoogle style={{ width: "20px", height: "17px", position: "relative", top: "-1px" }} />  Continue With Google </button>
 							<button className={styles.google_login} onClick={() => { }}> <BsMicrosoft style={{ width: "15px", height: '17px', marginRight: "2px", position: "relative", top: "-1px" }} /> Continue with Microsoft </button>
 							{/* <Link to="/login" className={styles.loginLink} style={{ color: "#1f2024" }}></Link> */}
 							{/* <Link to="/login" className={styles.loginLink}>Already have an Account?</Link> */}
 						</div>
 					</form>
+					<button onClick={loginPage} className={styles.registerLink2}> Already have an Account </button>
 				</div>
 			</div>
 		</div>
