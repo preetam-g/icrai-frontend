@@ -208,7 +208,11 @@ const Profile = () => {
     }
     
     if(!currentUser){
-    return <span>Unable to load user profile</span>;
+    return (
+            <button className={styles.logoutButton} onClick={() => logout()}>
+                Unable to load profile page - logout
+            </button>
+        )
     }
 
     return (

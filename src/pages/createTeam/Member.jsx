@@ -14,26 +14,26 @@ export const Member = ({ idx, member, onChange }) => {
             </div>
             <div className={styles.row}>
                 <div className={styles.column}>
-                    <label htmlFor={`first-name-${idx}`}>First Name*</label>
+                    <label htmlFor={`name-${idx}`}>Name*</label>
                     <input 
-                        id={`first-name-${idx}`} 
+                        id={`name-${idx}`} 
                         className={styles.ip} 
                         type="text" 
-                        value={member.firstName || ''}  
+                        value={member.name || ''}  
                         placeholder="Rage" 
-                        onChange={e => handleChange('firstName', e.target.value)} 
+                        onChange={e => handleChange('name', e.target.value)} 
                         required 
                     />
                 </div>
                 <div className={styles.column}>
-                    <label htmlFor={`last-name-${idx}`}>Last Name*</label>
+                    <label htmlFor={`university-${idx}`}>University*</label>
                     <input 
-                        id={`last-name-${idx}`} 
+                        id={`university-${idx}`} 
                         className={styles.ip} 
                         type="text" 
-                        value={member.lastName || ''}  /* Ensure value is not undefined */
+                        value={member.university || ''}  /* Ensure value is not undefined */
                         placeholder="Titan" 
-                        onChange={e => handleChange('lastName', e.target.value)} 
+                        onChange={e => handleChange('university', e.target.value)} 
                         required 
                     />
                 </div>

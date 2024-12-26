@@ -20,7 +20,7 @@
 		*/
 
 		const limits = {lower: 2, upper: 8};
-		const defaultMember = {firstName: '', lastName: '', phone: '', email: ''};
+		const defaultMember = {name: '', university: '', phone: '', email: ''};
 		const [teamTitle, setTeamTitle] = useState(null);
 		const [members, setMembers] = useState(Array(limits.lower).fill(defaultMember));
 		

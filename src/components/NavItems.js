@@ -3,19 +3,23 @@ import { useAuth0 } from '@auth0/auth0-react';
 export const useNavItems = () => {
   const { isAuthenticated, user } = useAuth0();
   
-  const navItems = isAuthenticated ? [
+  let navItems = [
     { path: '/contests', label: 'Contests' },
-    { path: '/createTeam', label: 'CreateTeam' },
-    { path: '/contests/register', label: 'Hackathon' },
     { path: '/aboutUs', label: 'About Us' },
-    { path: '/profile', label: user?.email || 'Profile' }
-  ] : [
-    { path: '/contests', label: 'Contests' },
-    { path: '/createTeam', label: 'CreateTeam' },
-    { path: '/contests/register', label: 'Hackathon' },
-    { path: '/aboutUs', label: 'About Us' },
-    { path: '/login', label: 'Login' }
   ];
+
+  // Add items based on authentication status
+  if (isAuthenticated) {
+    // Add Hackathon only for specific email
+    if (user?.email === 'fugah271202@gmail.com') {
+      navItems.push({ path: '/contests/register', label: 'Hackathon' });
+    }
+    // Add profile for all authenticated users
+    navItems.push({ path: '/profile', label: user?.email || 'Profile' });
+  } else {
+    // Add login for non-authenticated users
+    navItems.push({ path: '/login', label: 'Login' });
+  }
 
   return navItems;
 };

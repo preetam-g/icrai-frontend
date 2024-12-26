@@ -3,9 +3,19 @@ import Details from './dummy.jsx'
 import styles from './contests.module.css'
 import { BsFillPeopleFill } from "react-icons/bs";
 import { MdOutlineAccessTimeFilled } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
+
+
 
 
 const DescriptionHeader = ({ num }) => {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        
+        navigate('/createTeam');
+    }
+
     return (
         <div className={styles.DescriptionCards1}>
             <div className={styles.headerDetailsDiv}>
@@ -23,7 +33,7 @@ const DescriptionHeader = ({ num }) => {
             <div className={styles.Application}>
                 <div className={styles.leftcontent}>
                     <p className={styles.leftSpan}>{Details[num - 1].price}</p>
-                    <button className={styles.leftSpan}>Register</button>
+                    <button className={styles.leftSpan} onClick={handleClick} >Register</button>
                 </div>
                 <div className={styles.rightcontent}>
                     <div className={styles.AppliedDiv1}>
