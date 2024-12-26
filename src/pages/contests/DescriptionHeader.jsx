@@ -12,8 +12,7 @@ const DescriptionHeader = ({ num }) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        
-        navigate('/createTeam');
+        navigate('/createTeam', { state: { num: num } });  // Pass num as state
     }
 
     return (

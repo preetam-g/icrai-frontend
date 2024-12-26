@@ -1,5 +1,7 @@
 	import styles from './createTeam.module.css';
 	import { Member } from './Member';
+	import Details from '../contests/dummy'
+	import { useLocation } from 'react-router-dom';
 	// import { teams } from '../../fakeDatabase'
 	import { useEffect, useState } from 'react';
 	import { IoMdClose } from 'react-icons/io';
@@ -18,6 +20,13 @@
 			limits comes from contest details, example below
 
 		*/
+
+		const location = useLocation();
+        const num = location.state?.num;
+
+		// console.log("num:", num);
+		// console.log("Details:", Details);
+		// console.log("Details[num-1]:", num ? Details[num-1] : undefined);
 
 		const limits = {lower: 2, upper: 8};
 		const defaultMember = {name: '', university: '', phone: '', email: ''};
@@ -54,6 +63,9 @@
 			<div className={styles.example}>
 				<div className={styles.container}>
 					<form action="#" className={styles.form} onSubmit={handleSubmit}>
+					<div className={styles.teamName}>
+					<h1 className={styles.header1}>{Details[num - 1].contestHeading}</h1>
+					</div>
 					<div className={styles.teamName}>
 						<label className={styles.teamNameLabel}>
 							<input 
