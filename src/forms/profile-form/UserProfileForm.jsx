@@ -145,7 +145,7 @@ const UserProfileForm = ({ currentUser,onSave, isLoading }) => {
               {...register('name', { required: 'Name is required' })}
               className="bg-white border rounded p-2 w-full"
             />
-            {errors.university && <p className="error-message">{errors.university.message}</p>}
+            {errors.name && <p className="error-message">{errors.name.message}</p>}
           </div>
 
           <div className="form-field">

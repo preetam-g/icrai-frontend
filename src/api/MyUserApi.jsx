@@ -162,3 +162,51 @@ export const useUpdateMyUser = () => {
     return { updateUser, isLoading, isSuccess, isError, error, reset };
 };
 
+
+export const useCreateMyCompany = () => {
+    const createMyCompanyRequest = async (company) => {
+        try {
+            console.log('Sending data to server:', company); // Debug log
+
+            const response = await fetch(`${API_BASE_URL}/company`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(company),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.log('Server error response:', errorData); // Debug log
+                throw new Error(errorData.message || "Failed to add Hackathon");
+            }
+
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error('Detailed API Error:', error);
+            throw error;
+        }
+    };
+
+    const {
+        mutateAsync: createCompany, 
+        isLoading,
+        isError,
+        isSuccess,
+        error,
+        reset
+    } = useMutation(createMyCompanyRequest);
+
+    return {
+        createCompany,
+        isLoading,
+        isError,
+        isSuccess,
+        error,
+        reset
+    };
+};
+
+

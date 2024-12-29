@@ -1,0 +1,178 @@
+.form-container1 {
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+    padding: 2.5rem;
+    margin: 1rem 0;
+}
+
+.form-heading1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-field1 {
+    margin-bottom: 1rem;
+}
+
+.form-field1 label {
+    display: block;
+    color: #4a5568;
+}
+
+.form-field1 input {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.error-message1 {
+    color: #e53e3e;
+}
+
+.submit-button1 {
+    background-color: #4299e1;
+    color: white;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    box-shadow: 0 0 0 1px #8392ab;
+}
+
+.submit-button1:hover{
+    cursor: pointer;
+    box-shadow: 0 0 0 1px #646f7e;
+}
+
+/* Base checkbox styling */
+.form-checkbox1 {
+    /* Hide the default checkbox */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    /* Custom checkbox dimensions */
+    width: 20px;
+    height: 20px;
+    
+    /* Basic styling */
+    border: 2px solid #4B5563;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+}
+
+/* Checked state styling */
+.form-checkbox1:checked {
+    background-color: #2563EB;
+    border-color: #2563EB;
+}
+
+/* Create checkmark using pseudo-element */
+.form-checkbox1:checked::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Hover state */
+.form-checkbox1:hover {
+    border-color: #2563EB;
+}
+
+/* Focus state */
+.form-checkbox1:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Disabled state */
+.form-checkbox1:disabled {
+    background-color: #E5E7EB;
+    border-color: #9CA3AF;
+    cursor: not-allowed;
+}
+
+/* Container for checkbox and label */
+.checkbox-container1 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Label styling */
+.checkbox-label1 {
+    cursor: pointer;
+    font-size: 14px;
+    color: #4B5563;
+    user-select: none;
+}
+
+/* Error message styling */
+.checkbox-error1 {
+    color: #DC2626;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* Toggle switch variant */
+.toggle-switch1 {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.toggle-switch1 input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider1 {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #E5E7EB;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.toggle-slider1:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.toggle-switch1 input:checked + .toggle-slider1 {
+    background-color: #2563EB;
+}
+
+.toggle-switch1 input:checked + .toggle-slider1:before {
+    transform: translateX(20px);
+}
+
+.toggle-switch1 input:focus + .toggle-slider1 {
+    box-shadow: 0 0 1px #2563EB;
+}
+
+
