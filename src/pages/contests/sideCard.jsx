@@ -3,14 +3,15 @@ import styles from './contests.module.css'
 import { MdOutlineAccessTimeFilled } from "react-icons/md";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { IoIosPricetags } from "react-icons/io";
+//import { useGetMyCompany } from '../../api/MyUserApi';
 
 const Card = ({ contestClickHandler, index, element }) => {
     const [isHovering, setHovered] = useState(false)
+    //const { currentCompany,isLoading } = useGetMyCompany()
 
     const handleHovering = () => {
         setHovered(!isHovering);
     }
-
 
     return (
         <div onMouseEnter={handleHovering} onMouseLeave={handleHovering} onClick={() => { contestClickHandler(index + 1) }} className={styles.contestList}>

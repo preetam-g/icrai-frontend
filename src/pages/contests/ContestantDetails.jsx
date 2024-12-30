@@ -11,7 +11,7 @@ const ContestantDetails = ({num}) => {
                 {/* <img src='groupicon'></img> */}
                 <BsFillPeopleFill />
                 <div className=''>Applied</div>
-                <span>3</span>
+                <span>{Details[num-1].applied}</span>
             </div>
             <div className={styles.AppliedDiv1}>
                 {/* <img src='groupicon'></img> */}

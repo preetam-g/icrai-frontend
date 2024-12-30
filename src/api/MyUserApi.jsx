@@ -163,6 +163,37 @@ export const useUpdateMyUser = () => {
 };
 
 
+export const useGetMyCompany = () => {
+    //const { getAccessTokenSilently } = useAuth0();
+
+    const getMyCompanyRequest = async ()=> {
+        //const accessToken = await getAccessTokenSilently();
+
+        const response = await fetch(`${API_BASE_URL}/company`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+
+        if(!response.ok){
+            throw new Error("Failed to fetch Company");
+        }
+        return response.json();
+    };
+
+    const { data: currentCompany,
+            isLoading,
+            error, } = useQuery("fetchCurrentCompany",getMyCompanyRequest);
+
+    if(error){
+        console.log(error.toString());
+    }
+
+    return{ currentCompany,isLoading };
+};
+
+
 export const useCreateMyCompany = () => {
     const createMyCompanyRequest = async (company) => {
         try {
