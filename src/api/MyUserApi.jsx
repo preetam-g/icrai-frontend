@@ -240,4 +240,49 @@ export const useCreateMyCompany = () => {
     };
 };
 
+export const useCreateMyTeam = () => {
+    const { getAccessTokenSilently } = useAuth0();
+
+    const createMyTeamRequest = async (teamData) => {
+        try{
+            const accessToken = await getAccessTokenSilently();
+            const response = await fetch(`${API_BASE_URL}/team`, {
+                method: "POST",
+                headers: {
+                    Authorization: `Bearer ${accessToken}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(teamData),
+            });
+
+            const data = await response.json();
+
+            if(!response.ok){
+                throw new Error(data.message || "Failed to add Team");
+            }
+
+            return data;
+        }
+        catch(error){
+            console.error('Error in createMyTeamRequest:', error);
+            throw error;
+        }
+        
+    };
+
+    const {
+        mutateAsync: createTeam, 
+        isLoading,
+        isError,
+        isSuccess,
+    } = useMutation(createMyTeamRequest);
+
+    return {
+        createTeam,
+        isLoading,
+        isError,
+        isSuccess,
+    };
+}
+
 
