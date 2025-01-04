@@ -14,14 +14,16 @@ import UserProfilePage from './pages/profile/UserProfilePage';
 
 function App() {
 
-  const [selectedOption,setSelected] = useState(-1);
-	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [selectedOption, setSelected] = useState(-1);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [isRegistering, setRegistering] = useState(false);
+  const [isLogging, setLogging] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-  
+
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -29,7 +31,7 @@ function App() {
   })
   return (
     <Router>
-      <Navbar selectedOption={selectedOption} setSelected={setSelected}></Navbar>
+      <Navbar selectedOption={selectedOption} setRegistering={setRegistering} setSelected={setSelected} isLogging={isLogging} setLogging={setLogging}></Navbar>
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/login' element={<Login/>} />
