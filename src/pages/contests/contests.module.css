@@ -161,6 +161,12 @@ align-items: center;} button{
 	justify-content: space-between;
 	/* max-height: 15px; */
 }
+
+.headers1{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
 .EligibilityDiv {
 	margin: 10px 0px;
 	background-color: rgba(160, 160, 160, 0.611);
@@ -169,6 +175,22 @@ align-items: center;} button{
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 	line-height: 1.3;
 }
+
+
+.Eligibilities {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.tag1 {
+    background-color: #f0f0f0;  /* or your desired background color */
+    padding: 5px 10px;
+    border-radius: 4px;
+    /* Add any other styling for your tags */
+}
+
 .descriptionDiv {
 	margin: 10px 0px;
 	background-color: rgba(160, 160, 160, 0.611);

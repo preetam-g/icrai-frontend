@@ -48,6 +48,10 @@
 	width: 90%;
 }
 
+.header1{
+	margin-bottom: 20px;
+}
+
 .teamNameLabel{
 	/* border: 1px solid black; */
 	width: 80%;
@@ -181,6 +185,31 @@
 .disable{
 	display: none;
 }
+
+.message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.error {
+    background-color: #fee2e2;
+    border: 1px solid #ef4444;
+    color: #dc2626;
+}
+
+.success {
+    background-color: #dcfce7;
+    border: 1px solid #22c55e;
+    color: #16a34a;
+}
+
+.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
 
 /* .memberChange button{
 	border: 1px solid black;

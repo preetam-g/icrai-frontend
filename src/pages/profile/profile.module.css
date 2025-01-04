@@ -75,14 +75,45 @@ h2 {
     background-color: #32383b;
     color: white;
     border: none;
-    padding: 20px 35px;
+    margin-top: 10px;
+    padding: 10px 25px;
+    font-size: large;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.logoutButton {
+    background-color: #49acdd;
+    color: white;
+    border: none;
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: large;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.updateButton {
+    background-color: #32383b;
+    color: white;
+    border: none;
+    margin-top: 20px;
+    padding: 10px 25px;
     font-size: large;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .editButton:hover {
-    background-color: #3a4043;
+    background-color: #272b2d;
+}
+
+.updateButton:hover {
+    background-color: #272b2d;
+}
+
+.logoutButton:hover {
+    background-color: #1373a2;
 }
 
 .container_2 {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import Home from './pages/home/Home';
 import AboutUs from './pages/aboutUs/AboutUs';
 import Contests from './pages/contests/Contests';
@@ -9,6 +9,8 @@ import Login from './pages/login/Login';
 import Register from './pages/register/Register';
 import Profile from './pages/profile/Profile';
 import Navbar from './components/navbar/Navbar';
+import AuthCallbackPage from './auth/AuthCallbackPage';
+import UserProfilePage from './pages/profile/UserProfilePage';
 
 function App() {
 
@@ -31,20 +33,17 @@ function App() {
     <Router>
       <Navbar selectedOption={selectedOption} setRegistering={setRegistering} setSelected={setSelected} isLogging={isLogging} setLogging={setLogging}></Navbar>
       <Routes>
-        <Route path='/' element={<Home />} />
-
-        {isLogging && !isRegistering&&
-          <Route path='/login' element={<Login setLogging={setLogging} setRegistering={setRegistering}/>} />
-        }
-        {isRegistering && !isLogging&&
-          <Route path='/login' element={<Register setLogging={setLogging} setRegistering={setRegistering}/>} />
-        }
-        {/* <Route path='/register' element={<Register setLogging={setLogging} setRegistering={setRegistering}/>} /> */}
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/aboutUs' element={<AboutUs />} />
-        <Route path='/contests' element={<Contests windowWidth={windowWidth} />} />
-        <Route path='/contests/register' element={<HackathonRegister />} />
-        <Route path='/createTeam' element={<CreateTeam />} />
+        <Route path='/' element={<Home/>} />
+        <Route path='/login' element={<Login/>} />
+        <Route path='/register' element={<Register/>} />
+        <Route path='/profile' element={<Profile/>} />
+        <Route path='/aboutUs' element={<AboutUs/>} />
+        <Route path='/contests' element={<Contests windowWidth={windowWidth}/>} />
+        <Route path='/contests/register' element={<HackathonRegister/>} />
+        <Route path='/createTeam' element={<CreateTeam/>} />
+        <Route path='/profile-form' element={<UserProfilePage/>} />
+        <Route path="/auth-callback" element={<AuthCallbackPage />} />
+        <Route path='*' element={<Navigate to="/" />} />
       </Routes>
     </Router>
   )
