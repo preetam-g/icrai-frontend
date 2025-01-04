@@ -16,8 +16,6 @@ function App() {
 
   const [selectedOption, setSelected] = useState(-1);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [isRegistering, setRegistering] = useState(false);
-  const [isLogging, setLogging] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
@@ -31,7 +29,7 @@ function App() {
   })
   return (
     <Router>
-      <Navbar selectedOption={selectedOption} setRegistering={setRegistering} setSelected={setSelected} isLogging={isLogging} setLogging={setLogging}></Navbar>
+      <Navbar selectedOption={selectedOption} setSelected={setSelected}></Navbar>
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/login' element={<Login/>} />
