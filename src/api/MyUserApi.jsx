@@ -240,6 +240,43 @@ export const useCreateMyCompany = () => {
     };
 };
 
+export const useGetAllTeams = () => {
+    const { getAccessTokenSilently } = useAuth0();
+
+    const getAllTeamsRequest = async ()=> {
+        try{
+            const accessToken = await getAccessTokenSilently();
+            const response = await fetch(`${API_BASE_URL}/team`, {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${accessToken}`,
+                    "Content-Type": "application/json",
+                }
+            });
+
+            if(!response.ok){
+                throw new Error("Failed to fetch all Teams");
+            }
+
+            return response.json();
+
+        } catch(error){
+            console.error('Error in getAllTeamsRequest:', error);
+            throw error;
+        }
+    };
+
+    const { data: allTeams,
+            isLoading,
+            error, } = useQuery("fetchAllTeams",getAllTeamsRequest);
+
+    if(error){
+        console.log(error.toString());
+    }
+
+    return{ allTeams,isLoading };
+};
+
 export const useCreateMyTeam = () => {
     const { getAccessTokenSilently } = useAuth0();
 

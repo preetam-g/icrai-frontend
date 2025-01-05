@@ -131,14 +131,18 @@
 // export default Profile;
 
 import styles from './profile.module.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import md5 from 'md5';  // Ensure you have the 'md5' package installed
 import { useAuth0 } from '@auth0/auth0-react';
 import { useNavigate } from 'react-router-dom';
 import { useGetMyUser } from '../../api/MyUserApi';
+import { useGetAllTeams } from '../../api/MyUserApi';
 
 const Profile = () => {
-    const { logout } = useAuth0();  // Import logout function from Auth0
+    const { allTeams, isLoading: isLoadingTeams } = useGetAllTeams();
+    const { user,logout } = useAuth0();  // Import logout function from Auth0
+    const [userContests, setUserContests] = useState([]);
+
     const navigate = useNavigate();
     const { currentUser, isLoading:isGetLoading } = useGetMyUser(); 
     const profileData = {
@@ -150,18 +154,18 @@ const Profile = () => {
                 name: "Hackathon 2023",
                 team: "Team Alpha",
                 teammates: [
-                    { name: "Alice", role: "Frontend Developer" },
-                    { name: "Bob", role: "Backend Developer" },
-                    { name: "Charlie", role: "Designer" }
+                    { name: "Alice", university: "MIT" },
+                    { name: "Bob", university: "MIT" },
+                    { name: "Charlie", university: "MIT" }
                 ]
             },
             {
                 name: "CodeFest 2024",
                 team: "Team Beta",
                 teammates: [
-                    { name: "Dave", role: "Full Stack Developer" },
-                    { name: "Eve", role: "Data Scientist" },
-                    { name: "Frank", role: "UI/UX Designer" }
+                    { name: "Dave", university: "Lund University" },
+                    { name: "Eve", university: "Lund University" },
+                    { name: "Frank", university: "Lund University" }
                 ]
             }
         ],
@@ -174,6 +178,28 @@ const Profile = () => {
             altEmail: "abc@iitg.ac.in"
         }
     };
+
+    useEffect(() => {
+        if (allTeams && user) {
+            // Filter teams where user is either registerer or member
+            const userTeams = allTeams.filter(team => 
+                team.registeredBy === user.email || 
+                team.members.some(member => member.email === user.email)
+            );
+
+            // Transform teams data to match your dummy contest structure
+            const transformedContests = userTeams.map(team => ({
+                name: team.hackathonName,
+                team: team.teamName,
+                teammates: team.members.map(member => ({
+                    name: member.name,
+                    university: member.university
+                }))
+            }));
+
+            setUserContests(transformedContests);
+        }
+    }, [allTeams, user]);
 
     const [aboutMe, setAboutMe] = useState(profileData.aboutMe);
     const [isEditing, setIsEditing] = useState(false);
@@ -272,20 +298,28 @@ const Profile = () => {
                         <h3>Joined Contests</h3>
                     </div>
                     <div className={styles.contestsContainer}>
-                        {profileData.contests.map((contest, index) => (
-                            <div key={index} className={styles.contestCard}>
-                                <p><strong>Contest Name:</strong> {contest.name}</p>
-                                <p><strong>Team:</strong> {contest.team}</p>
-                                <p><strong>Teammates:</strong></p>
-                                <ul>
-                                    {contest.teammates.map((teammate, idx) => (
-                                        <li key={idx}>
-                                            {teammate.name} - {teammate.role}
-                                        </li>
-                                    ))}
-                                </ul>
+                    {isLoadingTeams ? (
+                            <div className={styles.loading}>Loading contests...</div>
+                        ) : userContests.length === 0 ? (
+                            <div className={styles.noContests}>
+                                No contests joined yet
                             </div>
-                        ))}
+                        ) : (
+                            userContests.map((contest, index) => (
+                                <div key={index} className={styles.contestCard}>
+                                    <p><strong>Contest Name:</strong> {contest.name}</p>
+                                    <p><strong>Team:</strong> {contest.team}</p>
+                                    <p><strong>Teammates:</strong></p>
+                                    <ul>
+                                        {contest.teammates.map((teammate, idx) => (
+                                            <li key={idx}>
+                                                {teammate.name} - {teammate.university}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))
+                        )}
                     </div>
                 </div>
             </div>
